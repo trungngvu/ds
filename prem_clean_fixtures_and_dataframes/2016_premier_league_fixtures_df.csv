@@ -1,0 +1,381 @@
+Fixture ID,Game Date,Home Team ID,Away Team ID,Home Team Goals,Away Team Goals,Venue,Home Team,Away Team,Home Team Logo,Away Team Logo
+17696,2016-08-13,64.0,46.0,2,1,KCOM Stadium,Hull City,Leicester,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/46.png
+17691,2016-08-13,44.0,76.0,0,1,Turf Moor,Burnley,Swansea,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/76.png
+17692,2016-08-13,52.0,60.0,0,1,Selhurst Park,Crystal Palace,West Brom,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/60.png
+17693,2016-08-13,45.0,47.0,1,1,Goodison Park,Everton,Tottenham,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/47.png
+17694,2016-08-13,70.0,75.0,1,1,Riverside,Middlesbrough,Stoke City,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/75.png
+17695,2016-08-13,41.0,38.0,1,1,St. Mary's Stadium,Southampton,Watford,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/38.png
+17690,2016-08-13,50.0,74.0,2,1,Etihad Stadium,Manchester City,Sunderland,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/746.png
+17689,2016-08-14,35.0,33.0,1,3,Vitality Stadium,Bournemouth,Manchester United,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/33.png
+17688,2016-08-14,42.0,40.0,3,4,Emirates Stadium,Arsenal,Liverpool,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/40.png
+17687,2016-08-15,49.0,48.0,2,1,Stamford Bridge,Chelsea,West Ham,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/48.png
+17686,2016-08-19,33.0,41.0,2,0,Old Trafford,Manchester United,Southampton,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/41.png
+17685,2016-08-20,75.0,50.0,1,4,bet365 Stadium,Stoke City,Manchester City,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/50.png
+17680,2016-08-20,44.0,40.0,2,0,Turf Moor,Burnley,Liverpool,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/40.png
+17681,2016-08-20,76.0,64.0,0,2,Liberty Stadium,Swansea,Hull City,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/64.png
+17682,2016-08-20,47.0,52.0,1,0,White Hart Lane,Tottenham,Crystal Palace,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/52.png
+17683,2016-08-20,38.0,49.0,1,2,Vicarage Road,Watford,Chelsea,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/49.png
+17684,2016-08-20,60.0,45.0,1,2,The Hawthorns,West Brom,Everton,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/45.png
+17679,2016-08-20,46.0,42.0,0,0,King Power Stadium,Leicester,Arsenal,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/42.png
+17678,2016-08-21,74.0,70.0,1,2,Stadium of Light,Sunderland,Middlesbrough,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/70.png
+17677,2016-08-21,48.0,35.0,1,0,London Stadium,West Ham,Bournemouth,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/35.png
+17676,2016-08-27,47.0,40.0,1,1,White Hart Lane,Tottenham,Liverpool,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/40.png
+17670,2016-08-27,49.0,44.0,3,0,Stamford Bridge,Chelsea,Burnley,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/44.png
+17671,2016-08-27,52.0,35.0,1,1,Selhurst Park,Crystal Palace,Bournemouth,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/35.png
+17672,2016-08-27,45.0,75.0,1,0,Goodison Park,Everton,Stoke City,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/75.png
+17673,2016-08-27,46.0,76.0,2,1,King Power Stadium,Leicester,Swansea,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/76.png
+17674,2016-08-27,41.0,74.0,1,1,St. Mary's Stadium,Southampton,Sunderland,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/746.png
+17675,2016-08-27,38.0,42.0,1,3,Vicarage Road,Watford,Arsenal,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/42.png
+17669,2016-08-27,64.0,33.0,0,1,KCOM Stadium,Hull City,Manchester United,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/33.png
+17668,2016-08-28,60.0,70.0,0,0,The Hawthorns,West Brom,Middlesbrough,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/70.png
+17667,2016-08-28,50.0,48.0,3,1,Etihad Stadium,Manchester City,West Ham,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/48.png
+17666,2016-09-10,33.0,50.0,1,2,Old Trafford,Manchester United,Manchester City,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/50.png
+17660,2016-09-10,42.0,41.0,2,1,Emirates Stadium,Arsenal,Southampton,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/41.png
+17661,2016-09-10,35.0,60.0,1,0,Vitality Stadium,Bournemouth,West Brom,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/60.png
+17662,2016-09-10,44.0,64.0,1,1,Turf Moor,Burnley,Hull City,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/64.png
+17663,2016-09-10,70.0,52.0,1,2,Riverside,Middlesbrough,Crystal Palace,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/52.png
+17664,2016-09-10,75.0,47.0,0,4,bet365 Stadium,Stoke City,Tottenham,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/47.png
+17665,2016-09-10,48.0,38.0,2,4,London Stadium,West Ham,Watford,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/38.png
+17659,2016-09-10,40.0,46.0,4,1,Anfield,Liverpool,Leicester,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/46.png
+17658,2016-09-11,76.0,49.0,2,2,Liberty Stadium,Swansea,Chelsea,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/49.png
+17657,2016-09-12,74.0,45.0,0,3,Stadium of Light,Sunderland,Everton,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/45.png
+17656,2016-09-16,49.0,40.0,1,2,Stamford Bridge,Chelsea,Liverpool,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/40.png
+17652,2016-09-17,64.0,42.0,1,4,KCOM Stadium,Hull City,Arsenal,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/42.png
+17653,2016-09-17,46.0,44.0,3,0,King Power Stadium,Leicester,Burnley,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/44.png
+17654,2016-09-17,50.0,35.0,4,0,Etihad Stadium,Manchester City,Bournemouth,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/35.png
+17655,2016-09-17,60.0,48.0,4,2,The Hawthorns,West Brom,West Ham,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/48.png
+17651,2016-09-17,45.0,70.0,3,1,Goodison Park,Everton,Middlesbrough,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/70.png
+17650,2016-09-18,38.0,33.0,3,1,Vicarage Road,Watford,Manchester United,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/33.png
+17648,2016-09-18,52.0,75.0,4,1,Selhurst Park,Crystal Palace,Stoke City,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/75.png
+17649,2016-09-18,41.0,76.0,1,0,St. Mary's Stadium,Southampton,Swansea,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/76.png
+17647,2016-09-18,47.0,74.0,1,0,White Hart Lane,Tottenham,Sunderland,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/746.png
+17646,2016-09-24,33.0,46.0,4,1,Old Trafford,Manchester United,Leicester,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/46.png
+17640,2016-09-24,35.0,45.0,1,0,Vitality Stadium,Bournemouth,Everton,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/45.png
+17641,2016-09-24,40.0,64.0,5,1,Anfield,Liverpool,Hull City,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/64.png
+17642,2016-09-24,70.0,47.0,1,2,Riverside,Middlesbrough,Tottenham,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/47.png
+17643,2016-09-24,75.0,60.0,1,1,bet365 Stadium,Stoke City,West Brom,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/60.png
+17644,2016-09-24,74.0,52.0,2,3,Stadium of Light,Sunderland,Crystal Palace,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/52.png
+17645,2016-09-24,76.0,50.0,1,3,Liberty Stadium,Swansea,Manchester City,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/50.png
+17639,2016-09-24,42.0,49.0,3,0,Emirates Stadium,Arsenal,Chelsea,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/49.png
+17638,2016-09-25,48.0,41.0,0,3,London Stadium,West Ham,Southampton,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/41.png
+17637,2016-09-26,44.0,38.0,2,0,Turf Moor,Burnley,Watford,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/38.png
+17636,2016-09-30,45.0,52.0,1,1,Goodison Park,Everton,Crystal Palace,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/52.png
+17635,2016-10-01,76.0,40.0,1,2,Liberty Stadium,Swansea,Liverpool,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/40.png
+17631,2016-10-01,64.0,49.0,0,2,KCOM Stadium,Hull City,Chelsea,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/49.png
+17632,2016-10-01,74.0,60.0,1,1,Stadium of Light,Sunderland,West Brom,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/60.png
+17633,2016-10-01,38.0,35.0,2,2,Vicarage Road,Watford,Bournemouth,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/35.png
+17634,2016-10-01,48.0,70.0,1,1,London Stadium,West Ham,Middlesbrough,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/70.png
+17630,2016-10-02,33.0,75.0,1,1,Old Trafford,Manchester United,Stoke City,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/75.png
+17628,2016-10-02,46.0,41.0,0,0,King Power Stadium,Leicester,Southampton,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/41.png
+17629,2016-10-02,47.0,50.0,2,0,White Hart Lane,Tottenham,Manchester City,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/50.png
+17627,2016-10-02,44.0,42.0,0,1,Turf Moor,Burnley,Arsenal,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/42.png
+17626,2016-10-15,49.0,46.0,3,0,Stamford Bridge,Chelsea,Leicester,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/46.png
+17621,2016-10-15,42.0,76.0,3,2,Emirates Stadium,Arsenal,Swansea,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/76.png
+17622,2016-10-15,35.0,64.0,6,1,Vitality Stadium,Bournemouth,Hull City,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/64.png
+17623,2016-10-15,50.0,45.0,1,1,Etihad Stadium,Manchester City,Everton,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/45.png
+17624,2016-10-15,75.0,74.0,2,0,bet365 Stadium,Stoke City,Sunderland,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/746.png
+17625,2016-10-15,60.0,47.0,1,1,The Hawthorns,West Brom,Tottenham,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/47.png
+17620,2016-10-15,52.0,48.0,0,1,Selhurst Park,Crystal Palace,West Ham,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/48.png
+17619,2016-10-16,70.0,38.0,0,1,Riverside,Middlesbrough,Watford,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/38.png
+17618,2016-10-16,41.0,44.0,3,1,St. Mary's Stadium,Southampton,Burnley,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/44.png
+17617,2016-10-17,40.0,33.0,0,0,Anfield,Liverpool,Manchester United,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/33.png
+17616,2016-10-22,35.0,47.0,0,0,Vitality Stadium,Bournemouth,Tottenham,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/47.png
+17610,2016-10-22,42.0,70.0,0,0,Emirates Stadium,Arsenal,Middlesbrough,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/70.png
+17611,2016-10-22,44.0,45.0,2,1,Turf Moor,Burnley,Everton,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/45.png
+17612,2016-10-22,64.0,75.0,0,2,KCOM Stadium,Hull City,Stoke City,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/75.png
+17613,2016-10-22,46.0,52.0,3,1,King Power Stadium,Leicester,Crystal Palace,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/52.png
+17614,2016-10-22,76.0,38.0,0,0,Liberty Stadium,Swansea,Watford,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/38.png
+17615,2016-10-22,48.0,74.0,1,0,London Stadium,West Ham,Sunderland,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/746.png
+17609,2016-10-22,40.0,60.0,2,1,Anfield,Liverpool,West Brom,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/60.png
+17608,2016-10-23,50.0,41.0,1,1,Etihad Stadium,Manchester City,Southampton,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/41.png
+17607,2016-10-23,49.0,33.0,4,0,Stamford Bridge,Chelsea,Manchester United,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/33.png
+17606,2016-10-29,74.0,42.0,1,4,Stadium of Light,Sunderland,Arsenal,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/42.png
+17601,2016-10-29,33.0,44.0,0,0,Old Trafford,Manchester United,Burnley,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/44.png
+17602,2016-10-29,70.0,35.0,2,0,Riverside,Middlesbrough,Bournemouth,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/35.png
+17603,2016-10-29,47.0,46.0,1,1,White Hart Lane,Tottenham,Leicester,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/46.png
+17604,2016-10-29,38.0,64.0,1,0,Vicarage Road,Watford,Hull City,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/64.png
+17605,2016-10-29,60.0,50.0,0,4,The Hawthorns,West Brom,Manchester City,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/50.png
+17600,2016-10-29,52.0,40.0,2,4,Selhurst Park,Crystal Palace,Liverpool,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/40.png
+17599,2016-10-30,45.0,48.0,2,0,Goodison Park,Everton,West Ham,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/48.png
+17598,2016-10-30,41.0,49.0,0,2,St. Mary's Stadium,Southampton,Chelsea,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/49.png
+17597,2016-10-31,75.0,76.0,3,1,bet365 Stadium,Stoke City,Swansea,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/76.png
+17593,2016-11-05,35.0,74.0,1,2,Vitality Stadium,Bournemouth,Sunderland,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/746.png
+17594,2016-11-05,44.0,52.0,3,2,Turf Moor,Burnley,Crystal Palace,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/52.png
+17595,2016-11-05,50.0,70.0,1,1,Etihad Stadium,Manchester City,Middlesbrough,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/70.png
+17596,2016-11-05,48.0,75.0,1,1,London Stadium,West Ham,Stoke City,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/75.png
+17592,2016-11-05,49.0,45.0,5,0,Stamford Bridge,Chelsea,Everton,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/45.png
+17591,2016-11-06,42.0,47.0,1,1,Emirates Stadium,Arsenal,Tottenham,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/47.png
+17589,2016-11-06,64.0,41.0,2,1,KCOM Stadium,Hull City,Southampton,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/41.png
+17590,2016-11-06,40.0,38.0,6,1,Anfield,Liverpool,Watford,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/38.png
+17588,2016-11-06,76.0,33.0,1,3,Liberty Stadium,Swansea,Manchester United,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/33.png
+17587,2016-11-06,46.0,60.0,1,2,King Power Stadium,Leicester,West Brom,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/60.png
+17586,2016-11-19,33.0,42.0,1,1,Old Trafford,Manchester United,Arsenal,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/42.png
+17580,2016-11-19,52.0,50.0,1,2,Selhurst Park,Crystal Palace,Manchester City,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/50.png
+17581,2016-11-19,45.0,76.0,1,1,Goodison Park,Everton,Swansea,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/76.png
+17582,2016-11-19,41.0,40.0,0,0,St. Mary's Stadium,Southampton,Liverpool,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/40.png
+17583,2016-11-19,75.0,35.0,0,1,bet365 Stadium,Stoke City,Bournemouth,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/35.png
+17584,2016-11-19,74.0,64.0,3,0,Stadium of Light,Sunderland,Hull City,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/64.png
+17585,2016-11-19,38.0,46.0,2,1,Vicarage Road,Watford,Leicester,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/46.png
+17579,2016-11-19,47.0,48.0,3,2,White Hart Lane,Tottenham,West Ham,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/48.png
+17578,2016-11-20,70.0,49.0,0,1,Riverside,Middlesbrough,Chelsea,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/49.png
+17577,2016-11-21,60.0,44.0,4,0,The Hawthorns,West Brom,Burnley,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/44.png
+17576,2016-11-26,44.0,50.0,1,2,Turf Moor,Burnley,Manchester City,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/50.png
+17572,2016-11-26,64.0,60.0,1,1,KCOM Stadium,Hull City,West Brom,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/60.png
+17573,2016-11-26,46.0,70.0,2,2,King Power Stadium,Leicester,Middlesbrough,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/70.png
+17574,2016-11-26,40.0,74.0,2,0,Anfield,Liverpool,Sunderland,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/746.png
+17575,2016-11-26,76.0,52.0,5,4,Liberty Stadium,Swansea,Crystal Palace,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/52.png
+17571,2016-11-26,49.0,47.0,2,1,Stamford Bridge,Chelsea,Tottenham,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/47.png
+17570,2016-11-27,38.0,75.0,0,1,Vicarage Road,Watford,Stoke City,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/75.png
+17569,2016-11-27,42.0,35.0,3,1,Emirates Stadium,Arsenal,Bournemouth,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/35.png
+17567,2016-11-27,33.0,48.0,1,1,Old Trafford,Manchester United,West Ham,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/48.png
+17568,2016-11-27,41.0,45.0,1,0,St. Mary's Stadium,Southampton,Everton,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/45.png
+17566,2016-12-03,50.0,49.0,1,3,Etihad Stadium,Manchester City,Chelsea,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/49.png
+17561,2016-12-03,52.0,41.0,3,0,Selhurst Park,Crystal Palace,Southampton,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/41.png
+17562,2016-12-03,75.0,44.0,2,0,bet365 Stadium,Stoke City,Burnley,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/44.png
+17563,2016-12-03,74.0,46.0,2,1,Stadium of Light,Sunderland,Leicester,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/46.png
+17564,2016-12-03,47.0,76.0,5,0,White Hart Lane,Tottenham,Swansea,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/76.png
+17565,2016-12-03,60.0,38.0,3,1,The Hawthorns,West Brom,Watford,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/38.png
+17560,2016-12-03,48.0,42.0,1,5,London Stadium,West Ham,Arsenal,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/42.png
+17559,2016-12-04,35.0,40.0,4,3,Vitality Stadium,Bournemouth,Liverpool,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/40.png
+17558,2016-12-04,45.0,33.0,1,1,Goodison Park,Everton,Manchester United,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/33.png
+17557,2016-12-05,70.0,64.0,1,0,Riverside,Middlesbrough,Hull City,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/64.png
+17556,2016-12-10,38.0,45.0,3,2,Vicarage Road,Watford,Everton,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/45.png
+17552,2016-12-10,42.0,75.0,3,1,Emirates Stadium,Arsenal,Stoke City,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/75.png
+17553,2016-12-10,44.0,35.0,3,2,Turf Moor,Burnley,Bournemouth,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/35.png
+17554,2016-12-10,64.0,52.0,3,3,KCOM Stadium,Hull City,Crystal Palace,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/52.png
+17555,2016-12-10,76.0,74.0,3,0,Liberty Stadium,Swansea,Sunderland,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/746.png
+17551,2016-12-10,46.0,50.0,4,2,King Power Stadium,Leicester,Manchester City,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/50.png
+17550,2016-12-11,49.0,60.0,1,0,Stamford Bridge,Chelsea,West Brom,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/60.png
+17548,2016-12-11,33.0,47.0,1,0,Old Trafford,Manchester United,Tottenham,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/47.png
+17549,2016-12-11,41.0,70.0,1,0,St. Mary's Stadium,Southampton,Middlesbrough,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/70.png
+17547,2016-12-11,40.0,48.0,2,2,Anfield,Liverpool,West Ham,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/48.png
+17545,2016-12-13,35.0,46.0,1,0,Vitality Stadium,Bournemouth,Leicester,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/46.png
+17546,2016-12-13,45.0,42.0,2,1,Goodison Park,Everton,Arsenal,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/42.png
+17542,2016-12-14,70.0,40.0,0,3,Riverside,Middlesbrough,Liverpool,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/40.png
+17543,2016-12-14,74.0,49.0,0,1,Stadium of Light,Sunderland,Chelsea,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/49.png
+17544,2016-12-14,48.0,44.0,1,0,London Stadium,West Ham,Burnley,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/44.png
+17537,2016-12-14,52.0,33.0,1,2,Selhurst Park,Crystal Palace,Manchester United,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/33.png
+17538,2016-12-14,50.0,38.0,2,0,Etihad Stadium,Manchester City,Watford,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/38.png
+17539,2016-12-14,75.0,41.0,0,0,bet365 Stadium,Stoke City,Southampton,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/41.png
+17540,2016-12-14,47.0,64.0,3,0,White Hart Lane,Tottenham,Hull City,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/64.png
+17541,2016-12-14,60.0,76.0,3,1,The Hawthorns,West Brom,Swansea,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/76.png
+17536,2016-12-17,52.0,49.0,0,1,Selhurst Park,Crystal Palace,Chelsea,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/49.png
+17532,2016-12-17,70.0,76.0,3,0,Riverside,Middlesbrough,Swansea,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/76.png
+17533,2016-12-17,75.0,46.0,2,2,bet365 Stadium,Stoke City,Leicester,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/46.png
+17534,2016-12-17,74.0,38.0,1,0,Stadium of Light,Sunderland,Watford,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/38.png
+17535,2016-12-17,48.0,64.0,1,0,London Stadium,West Ham,Hull City,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/64.png
+17531,2016-12-17,60.0,33.0,0,2,The Hawthorns,West Brom,Manchester United,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/33.png
+17530,2016-12-18,35.0,41.0,1,3,Vitality Stadium,Bournemouth,Southampton,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/41.png
+17528,2016-12-18,50.0,42.0,2,1,Etihad Stadium,Manchester City,Arsenal,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/42.png
+17529,2016-12-18,47.0,44.0,2,1,White Hart Lane,Tottenham,Burnley,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/44.png
+17527,2016-12-19,45.0,40.0,0,1,Goodison Park,Everton,Liverpool,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/40.png
+17526,2016-12-26,38.0,52.0,1,1,Vicarage Road,Watford,Crystal Palace,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/52.png
+17520,2016-12-26,42.0,60.0,1,0,Emirates Stadium,Arsenal,West Brom,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/60.png
+17521,2016-12-26,44.0,70.0,1,0,Turf Moor,Burnley,Middlesbrough,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/70.png
+17522,2016-12-26,49.0,35.0,3,0,Stamford Bridge,Chelsea,Bournemouth,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/35.png
+17523,2016-12-26,46.0,45.0,0,2,King Power Stadium,Leicester,Everton,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/45.png
+17524,2016-12-26,33.0,74.0,3,1,Old Trafford,Manchester United,Sunderland,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/746.png
+17525,2016-12-26,76.0,48.0,1,4,Liberty Stadium,Swansea,West Ham,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/48.png
+17519,2016-12-26,64.0,50.0,0,3,KCOM Stadium,Hull City,Manchester City,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/50.png
+17518,2016-12-27,40.0,75.0,4,1,Anfield,Liverpool,Stoke City,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/75.png
+17517,2016-12-28,41.0,47.0,1,4,St. Mary's Stadium,Southampton,Tottenham,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/47.png
+17516,2016-12-30,64.0,45.0,2,2,KCOM Stadium,Hull City,Everton,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/45.png
+17510,2016-12-31,44.0,74.0,4,1,Turf Moor,Burnley,Sunderland,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/746.png
+17511,2016-12-31,49.0,75.0,4,2,Stamford Bridge,Chelsea,Stoke City,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/75.png
+17512,2016-12-31,46.0,48.0,1,0,King Power Stadium,Leicester,West Ham,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/48.png
+17513,2016-12-31,33.0,70.0,2,1,Old Trafford,Manchester United,Middlesbrough,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/70.png
+17514,2016-12-31,41.0,60.0,1,2,St. Mary's Stadium,Southampton,West Brom,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/60.png
+17515,2016-12-31,76.0,35.0,0,3,Liberty Stadium,Swansea,Bournemouth,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/35.png
+17509,2016-12-31,40.0,50.0,1,0,Anfield,Liverpool,Manchester City,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/50.png
+17508,2017-01-01,38.0,47.0,1,4,Vicarage Road,Watford,Tottenham,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/47.png
+17507,2017-01-01,42.0,52.0,2,0,Emirates Stadium,Arsenal,Crystal Palace,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/52.png
+17506,2017-01-02,70.0,46.0,0,0,Riverside,Middlesbrough,Leicester,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/46.png
+17502,2017-01-02,45.0,41.0,3,0,Goodison Park,Everton,Southampton,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/41.png
+17503,2017-01-02,50.0,44.0,2,1,Etihad Stadium,Manchester City,Burnley,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/44.png
+17504,2017-01-02,74.0,40.0,2,2,Stadium of Light,Sunderland,Liverpool,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/40.png
+17505,2017-01-02,60.0,64.0,3,1,The Hawthorns,West Brom,Hull City,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/64.png
+17501,2017-01-02,48.0,33.0,0,2,London Stadium,West Ham,Manchester United,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/33.png
+17500,2017-01-03,35.0,42.0,3,3,Vitality Stadium,Bournemouth,Arsenal,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/42.png
+17498,2017-01-03,52.0,76.0,1,2,Selhurst Park,Crystal Palace,Swansea,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/76.png
+17499,2017-01-03,75.0,38.0,2,0,bet365 Stadium,Stoke City,Watford,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/38.png
+17497,2017-01-04,47.0,49.0,2,0,White Hart Lane,Tottenham,Chelsea,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/49.png
+17496,2017-01-14,47.0,60.0,4,0,White Hart Lane,Tottenham,West Brom,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/60.png
+17490,2017-01-14,44.0,41.0,1,0,Turf Moor,Burnley,Southampton,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/41.png
+17491,2017-01-14,64.0,35.0,3,1,KCOM Stadium,Hull City,Bournemouth,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/35.png
+17492,2017-01-14,74.0,75.0,1,3,Stadium of Light,Sunderland,Stoke City,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/75.png
+17493,2017-01-14,76.0,42.0,0,4,Liberty Stadium,Swansea,Arsenal,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/42.png
+17494,2017-01-14,38.0,70.0,0,0,Vicarage Road,Watford,Middlesbrough,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/70.png
+17495,2017-01-14,48.0,52.0,3,0,London Stadium,West Ham,Crystal Palace,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/52.png
+17489,2017-01-14,46.0,49.0,0,3,King Power Stadium,Leicester,Chelsea,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/49.png
+17488,2017-01-15,45.0,50.0,4,0,Goodison Park,Everton,Manchester City,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/50.png
+17487,2017-01-15,33.0,40.0,1,1,Old Trafford,Manchester United,Liverpool,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/40.png
+17486,2017-01-21,40.0,76.0,2,3,Anfield,Liverpool,Swansea,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/76.png
+17481,2017-01-21,35.0,38.0,2,2,Vitality Stadium,Bournemouth,Watford,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/38.png
+17482,2017-01-21,52.0,45.0,0,1,Selhurst Park,Crystal Palace,Everton,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/45.png
+17483,2017-01-21,70.0,48.0,1,3,Riverside,Middlesbrough,West Ham,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/48.png
+17484,2017-01-21,75.0,33.0,1,1,bet365 Stadium,Stoke City,Manchester United,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/33.png
+17485,2017-01-21,60.0,74.0,2,0,The Hawthorns,West Brom,Sunderland,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/746.png
+17480,2017-01-21,50.0,47.0,2,2,Etihad Stadium,Manchester City,Tottenham,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/47.png
+17479,2017-01-22,41.0,46.0,3,0,St. Mary's Stadium,Southampton,Leicester,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/46.png
+17478,2017-01-22,42.0,44.0,2,1,Emirates Stadium,Arsenal,Burnley,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/44.png
+17477,2017-01-22,49.0,64.0,2,0,Stamford Bridge,Chelsea,Hull City,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/64.png
+17471,2017-01-31,42.0,38.0,1,2,Emirates Stadium,Arsenal,Watford,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/38.png
+17472,2017-01-31,35.0,52.0,0,2,Vitality Stadium,Bournemouth,Crystal Palace,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/52.png
+17473,2017-01-31,44.0,46.0,1,0,Turf Moor,Burnley,Leicester,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/46.png
+17474,2017-01-31,70.0,60.0,1,1,Riverside,Middlesbrough,West Brom,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/60.png
+17475,2017-01-31,74.0,47.0,0,0,Stadium of Light,Sunderland,Tottenham,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/47.png
+17476,2017-01-31,76.0,41.0,2,1,Liberty Stadium,Swansea,Southampton,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/41.png
+17470,2017-01-31,40.0,49.0,1,1,Anfield,Liverpool,Chelsea,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/49.png
+17469,2017-02-01,48.0,50.0,0,4,London Stadium,West Ham,Manchester City,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/50.png
+17467,2017-02-01,33.0,64.0,0,0,Old Trafford,Manchester United,Hull City,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/64.png
+17468,2017-02-01,75.0,45.0,1,1,bet365 Stadium,Stoke City,Everton,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/45.png
+17466,2017-02-04,49.0,42.0,3,1,Stamford Bridge,Chelsea,Arsenal,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/42.png
+17460,2017-02-04,52.0,74.0,0,4,Selhurst Park,Crystal Palace,Sunderland,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/746.png
+17461,2017-02-04,45.0,35.0,6,3,Goodison Park,Everton,Bournemouth,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/35.png
+17462,2017-02-04,64.0,40.0,2,0,KCOM Stadium,Hull City,Liverpool,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/40.png
+17463,2017-02-04,41.0,48.0,1,3,St. Mary's Stadium,Southampton,West Ham,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/48.png
+17464,2017-02-04,38.0,44.0,2,1,Vicarage Road,Watford,Burnley,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/44.png
+17465,2017-02-04,60.0,75.0,1,0,The Hawthorns,West Brom,Stoke City,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/75.png
+17459,2017-02-04,47.0,70.0,1,0,White Hart Lane,Tottenham,Middlesbrough,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/70.png
+17458,2017-02-05,50.0,76.0,2,1,Etihad Stadium,Manchester City,Swansea,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/76.png
+17457,2017-02-05,46.0,33.0,0,3,King Power Stadium,Leicester,Manchester United,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/33.png
+17456,2017-02-11,42.0,64.0,2,0,Emirates Stadium,Arsenal,Hull City,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/64.png
+17451,2017-02-11,33.0,38.0,2,0,Old Trafford,Manchester United,Watford,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/38.png
+17452,2017-02-11,70.0,45.0,0,0,Riverside,Middlesbrough,Everton,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/45.png
+17453,2017-02-11,75.0,52.0,1,0,bet365 Stadium,Stoke City,Crystal Palace,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/52.png
+17454,2017-02-11,74.0,41.0,0,4,Stadium of Light,Sunderland,Southampton,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/41.png
+17455,2017-02-11,48.0,60.0,2,2,London Stadium,West Ham,West Brom,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/60.png
+17450,2017-02-11,40.0,47.0,2,0,Anfield,Liverpool,Tottenham,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/47.png
+17449,2017-02-12,44.0,49.0,1,1,Turf Moor,Burnley,Chelsea,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/49.png
+17448,2017-02-12,76.0,46.0,2,0,Liberty Stadium,Swansea,Leicester,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/46.png
+17447,2017-02-13,35.0,50.0,0,2,Vitality Stadium,Bournemouth,Manchester City,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/50.png
+17442,2017-02-25,49.0,76.0,3,1,Stamford Bridge,Chelsea,Swansea,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/76.png
+17443,2017-02-25,52.0,70.0,1,0,Selhurst Park,Crystal Palace,Middlesbrough,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/70.png
+17444,2017-02-25,45.0,74.0,2,0,Goodison Park,Everton,Sunderland,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/746.png
+17445,2017-02-25,64.0,44.0,1,1,KCOM Stadium,Hull City,Burnley,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/44.png
+17446,2017-02-25,60.0,35.0,2,1,The Hawthorns,West Brom,Bournemouth,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/35.png
+17441,2017-02-25,38.0,48.0,1,1,Vicarage Road,Watford,West Ham,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/48.png
+17440,2017-02-26,47.0,75.0,4,0,White Hart Lane,Tottenham,Stoke City,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/75.png
+17439,2017-02-27,46.0,40.0,3,1,King Power Stadium,Leicester,Liverpool,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/40.png
+17438,2017-03-04,33.0,35.0,1,1,Old Trafford,Manchester United,Bournemouth,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/35.png
+17433,2017-03-04,46.0,64.0,3,1,King Power Stadium,Leicester,Hull City,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/64.png
+17434,2017-03-04,75.0,70.0,2,0,bet365 Stadium,Stoke City,Middlesbrough,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/70.png
+17435,2017-03-04,76.0,44.0,3,2,Liberty Stadium,Swansea,Burnley,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/44.png
+17436,2017-03-04,38.0,41.0,3,4,Vicarage Road,Watford,Southampton,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/41.png
+17437,2017-03-04,60.0,52.0,0,2,The Hawthorns,West Brom,Crystal Palace,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/52.png
+17432,2017-03-04,40.0,42.0,3,1,Anfield,Liverpool,Arsenal,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/42.png
+17431,2017-03-05,47.0,45.0,3,2,White Hart Lane,Tottenham,Everton,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/45.png
+17430,2017-03-05,74.0,50.0,0,2,Stadium of Light,Sunderland,Manchester City,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/50.png
+17429,2017-03-06,48.0,49.0,1,2,London Stadium,West Ham,Chelsea,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/49.png
+17428,2017-03-08,50.0,75.0,0,0,Etihad Stadium,Manchester City,Stoke City,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/75.png
+17425,2017-03-11,35.0,48.0,3,2,Vitality Stadium,Bournemouth,West Ham,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/48.png
+17426,2017-03-11,45.0,60.0,3,0,Goodison Park,Everton,West Brom,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/60.png
+17427,2017-03-11,64.0,76.0,2,1,KCOM Stadium,Hull City,Swansea,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/76.png
+17424,2017-03-12,40.0,44.0,2,1,Anfield,Liverpool,Burnley,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/44.png
+17423,2017-03-18,60.0,42.0,3,1,The Hawthorns,West Brom,Arsenal,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/42.png
+17418,2017-03-18,52.0,38.0,1,0,Selhurst Park,Crystal Palace,Watford,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/38.png
+17419,2017-03-18,45.0,64.0,4,0,Goodison Park,Everton,Hull City,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/64.png
+17420,2017-03-18,75.0,49.0,1,2,bet365 Stadium,Stoke City,Chelsea,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/49.png
+17421,2017-03-18,74.0,44.0,0,0,Stadium of Light,Sunderland,Burnley,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/44.png
+17422,2017-03-18,48.0,46.0,2,3,London Stadium,West Ham,Leicester,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/46.png
+17417,2017-03-18,35.0,76.0,2,0,Vitality Stadium,Bournemouth,Swansea,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/76.png
+17416,2017-03-19,70.0,33.0,1,3,Riverside,Middlesbrough,Manchester United,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/33.png
+17415,2017-03-19,47.0,41.0,2,1,White Hart Lane,Tottenham,Southampton,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/41.png
+17414,2017-03-19,50.0,40.0,1,1,Etihad Stadium,Manchester City,Liverpool,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/40.png
+17413,2017-04-01,40.0,45.0,3,1,Anfield,Liverpool,Everton,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/45.png
+17407,2017-04-01,44.0,47.0,0,2,Turf Moor,Burnley,Tottenham,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/47.png
+17408,2017-04-01,49.0,52.0,1,2,Stamford Bridge,Chelsea,Crystal Palace,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/52.png
+17409,2017-04-01,64.0,48.0,2,1,KCOM Stadium,Hull City,West Ham,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/48.png
+17410,2017-04-01,46.0,75.0,2,0,King Power Stadium,Leicester,Stoke City,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/75.png
+17411,2017-04-01,33.0,60.0,0,0,Old Trafford,Manchester United,West Brom,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/60.png
+17412,2017-04-01,38.0,74.0,1,0,Vicarage Road,Watford,Sunderland,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/746.png
+17406,2017-04-01,41.0,35.0,0,0,St. Mary's Stadium,Southampton,Bournemouth,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/35.png
+17405,2017-04-02,76.0,70.0,0,0,Liberty Stadium,Swansea,Middlesbrough,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/70.png
+17404,2017-04-02,42.0,50.0,2,2,Emirates Stadium,Arsenal,Manchester City,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/50.png
+17401,2017-04-04,44.0,75.0,1,0,Turf Moor,Burnley,Stoke City,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/75.png
+17402,2017-04-04,46.0,74.0,2,0,King Power Stadium,Leicester,Sunderland,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/746.png
+17403,2017-04-04,38.0,60.0,2,0,Vicarage Road,Watford,West Brom,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/60.png
+17400,2017-04-04,33.0,45.0,1,1,Old Trafford,Manchester United,Everton,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/45.png
+17396,2017-04-05,42.0,48.0,3,0,Emirates Stadium,Arsenal,West Ham,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/48.png
+17397,2017-04-05,64.0,70.0,4,2,KCOM Stadium,Hull City,Middlesbrough,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/70.png
+17398,2017-04-05,41.0,52.0,3,1,St. Mary's Stadium,Southampton,Crystal Palace,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/52.png
+17399,2017-04-05,76.0,47.0,1,3,Liberty Stadium,Swansea,Tottenham,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/47.png
+17394,2017-04-05,49.0,50.0,2,1,Stamford Bridge,Chelsea,Manchester City,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/50.png
+17395,2017-04-05,40.0,35.0,2,2,Anfield,Liverpool,Bournemouth,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/35.png
+17393,2017-04-08,47.0,38.0,4,0,White Hart Lane,Tottenham,Watford,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/38.png
+17388,2017-04-08,50.0,64.0,3,1,Etihad Stadium,Manchester City,Hull City,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/64.png
+17389,2017-04-08,70.0,44.0,0,0,Riverside,Middlesbrough,Burnley,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/44.png
+17390,2017-04-08,75.0,40.0,1,2,bet365 Stadium,Stoke City,Liverpool,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/40.png
+17391,2017-04-08,60.0,41.0,0,1,The Hawthorns,West Brom,Southampton,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/41.png
+17392,2017-04-08,48.0,76.0,1,0,London Stadium,West Ham,Swansea,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/76.png
+17387,2017-04-08,35.0,49.0,1,3,Vitality Stadium,Bournemouth,Chelsea,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/49.png
+17386,2017-04-09,74.0,33.0,0,3,Stadium of Light,Sunderland,Manchester United,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/33.png
+17385,2017-04-09,45.0,46.0,4,2,Goodison Park,Everton,Leicester,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/46.png
+17384,2017-04-10,52.0,42.0,3,0,Selhurst Park,Crystal Palace,Arsenal,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/42.png
+17383,2017-04-15,47.0,35.0,4,0,White Hart Lane,Tottenham,Bournemouth,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/35.png
+17378,2017-04-15,52.0,46.0,2,2,Selhurst Park,Crystal Palace,Leicester,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/46.png
+17379,2017-04-15,45.0,44.0,3,1,Goodison Park,Everton,Burnley,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/44.png
+17380,2017-04-15,75.0,64.0,3,1,bet365 Stadium,Stoke City,Hull City,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/64.png
+17381,2017-04-15,74.0,48.0,2,2,Stadium of Light,Sunderland,West Ham,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/48.png
+17382,2017-04-15,38.0,76.0,1,0,Vicarage Road,Watford,Swansea,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/76.png
+17377,2017-04-15,41.0,50.0,0,3,St. Mary's Stadium,Southampton,Manchester City,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/50.png
+17376,2017-04-16,60.0,40.0,0,1,The Hawthorns,West Brom,Liverpool,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/40.png
+17375,2017-04-16,33.0,49.0,2,0,Old Trafford,Manchester United,Chelsea,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/49.png
+17374,2017-04-17,70.0,42.0,1,2,Riverside,Middlesbrough,Arsenal,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/42.png
+17370,2017-04-22,35.0,70.0,4,0,Vitality Stadium,Bournemouth,Middlesbrough,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/70.png
+17371,2017-04-22,64.0,38.0,2,0,KCOM Stadium,Hull City,Watford,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/38.png
+17372,2017-04-22,76.0,75.0,2,0,Liberty Stadium,Swansea,Stoke City,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/75.png
+17373,2017-04-22,48.0,45.0,0,0,London Stadium,West Ham,Everton,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/45.png
+17369,2017-04-23,44.0,33.0,0,2,Turf Moor,Burnley,Manchester United,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/33.png
+17368,2017-04-23,40.0,52.0,1,2,Anfield,Liverpool,Crystal Palace,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/52.png
+17367,2017-04-25,49.0,41.0,4,2,Stamford Bridge,Chelsea,Southampton,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/41.png
+17365,2017-04-26,42.0,46.0,1,0,Emirates Stadium,Arsenal,Leicester,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/46.png
+17366,2017-04-26,70.0,74.0,1,0,Riverside,Middlesbrough,Sunderland,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/746.png
+17364,2017-04-26,52.0,47.0,0,1,Selhurst Park,Crystal Palace,Tottenham,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/47.png
+17363,2017-04-27,50.0,33.0,0,0,Etihad Stadium,Manchester City,Manchester United,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/33.png
+17359,2017-04-29,41.0,64.0,0,0,St. Mary's Stadium,Southampton,Hull City,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/64.png
+17360,2017-04-29,75.0,48.0,0,0,bet365 Stadium,Stoke City,West Ham,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/48.png
+17361,2017-04-29,74.0,35.0,0,1,Stadium of Light,Sunderland,Bournemouth,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/35.png
+17362,2017-04-29,60.0,46.0,0,1,The Hawthorns,West Brom,Leicester,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/46.png
+17358,2017-04-29,52.0,44.0,0,2,Selhurst Park,Crystal Palace,Burnley,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/44.png
+17357,2017-04-30,33.0,76.0,1,1,Old Trafford,Manchester United,Swansea,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/76.png
+17355,2017-04-30,45.0,49.0,0,3,Goodison Park,Everton,Chelsea,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/49.png
+17356,2017-04-30,70.0,50.0,2,2,Riverside,Middlesbrough,Manchester City,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/50.png
+17354,2017-04-30,47.0,42.0,2,0,White Hart Lane,Tottenham,Arsenal,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/42.png
+17353,2017-05-01,38.0,40.0,0,1,Vicarage Road,Watford,Liverpool,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/40.png
+17352,2017-05-05,48.0,47.0,1,0,London Stadium,West Ham,Tottenham,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/47.png
+17351,2017-05-06,50.0,52.0,5,0,Etihad Stadium,Manchester City,Crystal Palace,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/52.png
+17347,2017-05-06,35.0,75.0,2,2,Vitality Stadium,Bournemouth,Stoke City,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/75.png
+17348,2017-05-06,44.0,60.0,2,2,Turf Moor,Burnley,West Brom,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/60.png
+17349,2017-05-06,64.0,74.0,0,2,KCOM Stadium,Hull City,Sunderland,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/746.png
+17350,2017-05-06,46.0,38.0,3,0,King Power Stadium,Leicester,Watford,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/38.png
+17346,2017-05-06,76.0,45.0,1,0,Liberty Stadium,Swansea,Everton,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/45.png
+17345,2017-05-07,40.0,41.0,0,0,Anfield,Liverpool,Southampton,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/41.png
+17344,2017-05-07,42.0,33.0,2,0,Emirates Stadium,Arsenal,Manchester United,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/33.png
+17343,2017-05-08,49.0,70.0,3,0,Stamford Bridge,Chelsea,Middlesbrough,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/70.png
+17342,2017-05-10,41.0,42.0,0,2,St. Mary's Stadium,Southampton,Arsenal,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/42.png
+17341,2017-05-12,45.0,38.0,1,0,Goodison Park,Everton,Watford,https://media.api-sports.io/football/teams/45.png,https://media.api-sports.io/football/teams/38.png
+17340,2017-05-12,60.0,49.0,0,1,The Hawthorns,West Brom,Chelsea,https://media.api-sports.io/football/teams/60.png,https://media.api-sports.io/football/teams/49.png
+17339,2017-05-13,50.0,46.0,2,1,Etihad Stadium,Manchester City,Leicester,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/46.png
+17336,2017-05-13,35.0,44.0,2,1,Vitality Stadium,Bournemouth,Burnley,https://media.api-sports.io/football/teams/35.png,https://media.api-sports.io/football/teams/44.png
+17337,2017-05-13,70.0,41.0,1,2,Riverside,Middlesbrough,Southampton,https://media.api-sports.io/football/teams/70.png,https://media.api-sports.io/football/teams/41.png
+17338,2017-05-13,74.0,76.0,0,2,Stadium of Light,Sunderland,Swansea,https://media.api-sports.io/football/teams/746.png,https://media.api-sports.io/football/teams/76.png
+17335,2017-05-13,75.0,42.0,1,4,bet365 Stadium,Stoke City,Arsenal,https://media.api-sports.io/football/teams/75.png,https://media.api-sports.io/football/teams/42.png
+17334,2017-05-14,52.0,64.0,4,0,Selhurst Park,Crystal Palace,Hull City,https://media.api-sports.io/football/teams/52.png,https://media.api-sports.io/football/teams/64.png
+17333,2017-05-14,48.0,40.0,0,4,London Stadium,West Ham,Liverpool,https://media.api-sports.io/football/teams/48.png,https://media.api-sports.io/football/teams/40.png
+17332,2017-05-14,47.0,33.0,2,1,White Hart Lane,Tottenham,Manchester United,https://media.api-sports.io/football/teams/47.png,https://media.api-sports.io/football/teams/33.png
+17331,2017-05-15,49.0,38.0,4,3,Stamford Bridge,Chelsea,Watford,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/38.png
+17330,2017-05-16,42.0,74.0,2,0,Emirates Stadium,Arsenal,Sunderland,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/746.png
+17329,2017-05-16,50.0,60.0,3,1,Etihad Stadium,Manchester City,West Brom,https://media.api-sports.io/football/teams/50.png,https://media.api-sports.io/football/teams/60.png
+17328,2017-05-17,41.0,33.0,0,0,St. Mary's Stadium,Southampton,Manchester United,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/33.png
+17327,2017-05-18,46.0,47.0,1,6,King Power Stadium,Leicester,Tottenham,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/47.png
+17317,2017-05-21,42.0,45.0,3,1,Emirates Stadium,Arsenal,Everton,https://media.api-sports.io/football/teams/42.png,https://media.api-sports.io/football/teams/45.png
+17318,2017-05-21,44.0,48.0,1,2,Turf Moor,Burnley,West Ham,https://media.api-sports.io/football/teams/44.png,https://media.api-sports.io/football/teams/48.png
+17319,2017-05-21,49.0,74.0,5,1,Stamford Bridge,Chelsea,Sunderland,https://media.api-sports.io/football/teams/49.png,https://media.api-sports.io/football/teams/746.png
+17320,2017-05-21,64.0,47.0,1,7,KCOM Stadium,Hull City,Tottenham,https://media.api-sports.io/football/teams/64.png,https://media.api-sports.io/football/teams/47.png
+17321,2017-05-21,46.0,35.0,1,1,King Power Stadium,Leicester,Bournemouth,https://media.api-sports.io/football/teams/46.png,https://media.api-sports.io/football/teams/35.png
+17322,2017-05-21,40.0,70.0,3,0,Anfield,Liverpool,Middlesbrough,https://media.api-sports.io/football/teams/40.png,https://media.api-sports.io/football/teams/70.png
+17323,2017-05-21,33.0,52.0,2,0,Old Trafford,Manchester United,Crystal Palace,https://media.api-sports.io/football/teams/33.png,https://media.api-sports.io/football/teams/52.png
+17324,2017-05-21,41.0,75.0,0,1,St. Mary's Stadium,Southampton,Stoke City,https://media.api-sports.io/football/teams/41.png,https://media.api-sports.io/football/teams/75.png
+17325,2017-05-21,76.0,60.0,2,1,Liberty Stadium,Swansea,West Brom,https://media.api-sports.io/football/teams/76.png,https://media.api-sports.io/football/teams/60.png
+17326,2017-05-21,38.0,50.0,0,5,Vicarage Road,Watford,Manchester City,https://media.api-sports.io/football/teams/38.png,https://media.api-sports.io/football/teams/50.png
