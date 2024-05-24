@@ -11,7 +11,7 @@ Created on Sat Jun 27 12:11:31 2020
 
 from flask import Flask, render_template
 import pickle
-from datetime import datetime
+from datetime import datetime, timedelta
 app = Flask(__name__, static_url_path='/static')
 
 #------------------------------------ FLASK -----------------------------------
@@ -28,7 +28,9 @@ with open('../prem_clean_fixtures_and_dataframes/2019_2020_2021_2022_2023_additi
 #    pl_pred = pickle.load(myFile)
 
 #removing all past predictions if they still exist in the predictions df
-current_date = datetime.today().strftime('%Y-%m-%d')
+temp_current_date = datetime(2024,3,1) 
+current_date = temp_current_date.strftime('%Y-%m-%d')
+# current_date = datetime.today().strftime('%Y-%m-%d')
 for j in range(len(pl_pred)):
     game_date = pl_pred['Game Date'].loc[j]
     if game_date < current_date:
