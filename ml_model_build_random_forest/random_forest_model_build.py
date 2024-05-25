@@ -34,21 +34,21 @@ plt.close('all')
 
 #------------------------------- INPUT VARIABLES ------------------------------
 
-df_5_saved_name = '2019_2020_2021_2022_prem_df_for_ml_5_v2.txt'
-df_10_saved_name = '2019_2020_2021_2022_prem_df_for_ml_10_v2.txt'
+df_5_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_prem_df_for_ml_5_v2.txt'
+df_10_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_prem_df_for_ml_10_v2.txt'
 
-grid_search = False
+grid_search = True
 
-pred_prob_plot_df10 = False
-save_pred_prob_plot_df10 = False
-pred_prob_plot_df5 = False
-save_pred_prob_plot_df5 = False
+pred_prob_plot_df10 = True
+save_pred_prob_plot_df10 = True
+pred_prob_plot_df5 = True
+save_pred_prob_plot_df5 = True
 
-save_conf_matrix_df10 = False
-save_conf_matrix_df5 = False
+save_conf_matrix_df10 = True
+save_conf_matrix_df5 = True
 
-save_learning_curve_df10 = False
-save_learning_curve_df5 = False
+save_learning_curve_df10 = True
+save_learning_curve_df5 = True
 
 create_final_model = True
 
@@ -165,6 +165,67 @@ if grid_search:
     print('Gradient Best Score: ' , grid_search_grad.best_score_ , '\n')
 
 
+
+# ----- TESTING MAX-DEPTH -----
+def test_rand_f_max_depth(X, y, iterations=5, max_depth=10, y_min=0.3, y_max=1.02, title='', leg_loc=4):
+    
+    #instantiating test and train lists to be appended.
+    test_accuracy_compiled = []
+    train_accuracy_compiled = []
+    
+    for i in range(1, iterations, 1):
+        #instantiating test and train lists to be appended.
+        test_accuracy = []
+        train_accuracy = []
+        
+        for n in range(1, max_depth, 1):
+            #instantiating model, creating splits and training the model
+            clf = RandomForestClassifier(max_depth = n)
+            x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+            clf.fit(x_train, y_train)
+            
+            #generating eval metrics and appending to list
+            train_data_score = round(clf.score(x_train, y_train), 3)
+            test_data_score = round(clf.score(x_test, y_test), 3)
+            train_accuracy.append(train_data_score)
+            test_accuracy.append(test_data_score)
+            
+        #second appedn, this is necessary due to the two for loops  
+        train_accuracy_compiled.append(train_accuracy)
+        test_accuracy_compiled.append(test_accuracy)
+    
+    #calculating metrics which will be plotted
+    train_accuracy_compiled_np = np.transpose(np.array(train_accuracy_compiled))
+    train_accuracy_compiled_av = np.mean(train_accuracy_compiled_np, axis=1)
+    test_accuracy_compiled_np = np.transpose(np.array(test_accuracy_compiled))
+    test_accuracy_compiled_av = np.mean(test_accuracy_compiled_np, axis=1)
+    test_accuracy_compiled_std = np.std(test_accuracy_compiled_np,axis=1)
+    
+    #instantiating figure and plotting accuracy lines and error bounds
+    fig, ax = plt.subplots()
+    ax.plot(list(range(1,10,1)), train_accuracy_compiled_av, color="royalblue",  label="Training score")
+    ax.plot(list(range(1,10,1)), test_accuracy_compiled_av, '--', color="#111111", label="Test score")
+    ax.fill_between(list(range(1,10,1)), test_accuracy_compiled_av - test_accuracy_compiled_std, test_accuracy_compiled_av + test_accuracy_compiled_std, color="#DDDDDD")
+
+    #Plotting details
+    ax.set_xlabel("Max Depth - n Nodes") 
+    ax.set_ylabel("Accuracy Score") 
+    ax.legend(loc=leg_loc)
+    ax.set_title(title, y=1, fontsize=14, fontweight='bold');
+    ax.set_ylim(y_min,y_max)
+    ax.set_xlim(0,max_depth)
+    
+    return fig
+
+
+fig = test_rand_f_max_depth(x_10, y_10, iterations=50, title='Testing Max Depth of Internal Nodes - ML_10')
+plt.savefig('figures/ml_10_testing_max_depth_random_forest.png')
+
+fig = test_rand_f_max_depth(x_5, y_5, iterations=50, title='Testing Max Depth of Internal Nodes - ML_5')
+plt.savefig('figures/ml_5_testing_max_depth_random_forest.png')
+
+
+
 #------------------------------- MODEL EVALUATION -----------------------------
 
 #cross validation
@@ -213,7 +274,7 @@ plot_cross_val_confusion_matrix(ml_10_rand_forest,
                                 title='Random Forest Confusion Matrix ML10', 
                                 cv=skf)
 if save_conf_matrix_df10:
-    plt.savefig('figures\ml_10_confusion_matrix_cross_val_random_forest.png')
+    plt.savefig('figures/ml_10_confusion_matrix_cross_val_random_forest.png')
 
 plot_cross_val_confusion_matrix(ml_5_rand_forest, 
                                 x_5, 
@@ -222,7 +283,7 @@ plot_cross_val_confusion_matrix(ml_5_rand_forest,
                                 title='Random Forest Confusion Matrix ML5', 
                                 cv=skf)
 if save_conf_matrix_df5:
-    plt.savefig('figures\ml_5_confusion_matrix_cross_val_random_forest.png')
+    plt.savefig('figures/ml_5_confusion_matrix_cross_val_random_forest.png')
 
 
 # ---------- LEARNING CURVE PLOTS ----------
@@ -231,19 +292,19 @@ plot_learning_curve(ml_10_rand_forest,
                     x_10, 
                     y_10, 
                     training_set_size=20, 
-                    x_max=600, 
+                    x_max=2500, 
                     title='Learning Curve - Random Forest DF_10')
 if save_learning_curve_df10:
-    plt.savefig('figures\ml_10_random_forest_learning_curve.png')
+    plt.savefig('figures/ml_10_random_forest_learning_curve.png')
 
 plot_learning_curve(ml_5_rand_forest, 
                     x_5, 
                     y_5, 
                     training_set_size=20, 
-                    x_max=600, 
+                    x_max=2500, 
                     title='Learning Curve - Random Forest DF_5')
 if save_learning_curve_df5:
-    plt.savefig('figures\ml_5_random_forest_learning_curve.png')
+    plt.savefig('figures/ml_5_random_forest_learning_curve.png')
 
 
 # ---------- FEATURE IMPORTANCE ----------

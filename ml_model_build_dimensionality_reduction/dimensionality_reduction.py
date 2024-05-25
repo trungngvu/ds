@@ -29,16 +29,16 @@ plt.close('all')
 
 #------------------------------- INPUT VARIABLES ------------------------------
 
-df_10_saved_name = '2019_2020_prem_df_for_ml_10_v2.txt'
+df_10_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_prem_df_for_ml_10_v2.txt'
 
 plot_scree_plot = True
-save_scree_plot = False
+save_scree_plot = True
 
 xplot_pc1_pc2 = True
-save_pc1_pc2 = False
+save_pc1_pc2 = True
 
 xplot_ld1_ld2 = True
-save_ld1_ld2 = False
+save_ld1_ld2 = True
 
 
 #------------------------ PRINCIPLE COMPONENT ANALYSIS ------------------------

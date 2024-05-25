@@ -29,8 +29,9 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score, cross_val_
 
 
 #------------------------------- INPUT VARIABLES ------------------------------
+# 2015_2016_2017_2018_2019_2020_2021_2022_2023_premier_league_fixtures_df.csv
+fixtures_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_premier_league_fixtures_df.csv'
 
-fixtures_saved_name = '2019_2020_premier_league_fixtures_df.csv'
 
 
 #---------------------- ALTERNATIVE FEATURE ENGINEERING -----------------------
