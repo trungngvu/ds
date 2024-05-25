@@ -11,8 +11,7 @@ Created on Sat Jun 27 12:11:31 2020
 
 from flask import Flask, render_template
 import pickle
-from datetime import datetime
-app = Flask(__name__, static_url_path='/static')
+from datetime import datetime, timedelta
 
 #------------------------------------ FLASK -----------------------------------
 
@@ -28,7 +27,8 @@ with open('../prem_clean_fixtures_and_dataframes/2019_2020_2021_2022_2023_additi
 #    pl_pred = pickle.load(myFile)
 
 #removing all past predictions if they still exist in the predictions df
-current_date = datetime.today().strftime('%Y-%m-%d')
+temp_current_date = datetime(2024,3,1)
+current_date = temp_current_date.strftime('%Y-%m-%d')
 for j in range(len(pl_pred)):
     game_date = pl_pred['Game Date'].loc[j]
     if game_date < current_date:
@@ -56,6 +56,9 @@ if max_additional_display_games > min_length:
 iterator2 = range(max_additional_display_games)
 
 
+
+app = Flask(__name__, static_url_path='/static')
+
 @app.route('/')
 def pass_game_1():
     return render_template('index.html',
@@ -63,14 +66,6 @@ def pass_game_1():
                            iterator=iterator,
                            iterator2=iterator2,
                            additional_stats_dict=additional_stats_dict)
-
-
-
-# =============================================================================
-# @app.route('/')
-# def hello_world():
-#     return 'Hello, World! I\'m called Matt'
-# =============================================================================
 
 if __name__ == '__main__':
     #app.debug = True

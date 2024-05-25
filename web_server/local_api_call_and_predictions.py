@@ -193,8 +193,7 @@ def req_prem_stats(start_index, end_index):
 
 #----- AUTOMATING MISSING DATA COLLECTION -----
 
-#in this section we will search through our exisiting database (2019_prem_game_stats folder) 
-#and request the game data of any missing games that have been played since we last requested data.
+#in this section we will search through our exisiting database (2019_prem_game_stats folder) and request the game data of any missing games that have been played since we last requested data.
 
 
 #listing the json data already collected
@@ -447,11 +446,7 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
 
 def mod_df(df, making_predictions=False):
     '''
-    This function requires the output from the function 'average_stats_df()'.
-    It takes a team and their oppoents (in the last 10 games) average stats, and subtracts one from the other. 
-    The benefit of this is it provides a more useful metric for how well a team has been performing. 
-    If the 'Av Shots Diff' is positive, it means that team has, on average taken more shots than their opponent in the previous games. 
-    This is a useful feature for machine learning.
+    This function requires the output from the function 'average_stats_df()'. It takes a team and their oppoents (in the last 10 games) average stats, and subtracts one from the other. The benefit of this is it provides a more useful metric for how well a team has been performing. If the 'Av Shots Diff' is positive, it means that team has, on average taken more shots than their opponent in the previous games. This is a useful feature for machine learning.
 
     Parameters
     ----------
@@ -566,8 +561,7 @@ df_for_predictions['Game Date'] = unplayed_games['Game Date']
 
 
 # ---------- MODELLING MISSING GAME DATA ----------
-#if our newly promoted team has not yet played 10 games we need to fill in this gap in order to make a prediction. 
-#Lets take the 3 relegated teams, avergae these and use that for all newly promoted teams.
+#if our newly promoted team has not yet played 10 games we need to fill in this gap in order to make a prediction. Lets take the 3 relegated teams, avergae these and use that for all newly promoted teams.
 
 relegated_id_1 = 35
 relegated_id_2 = 38
@@ -627,7 +621,6 @@ for i in range(0, len(unplayed_games)):
     df_for_predictions.iloc[i, 0:7] = h5
     df_for_predictions.iloc[i, 7:14] = a5
 
-path_to_model = '/home/chienduynguyen1702/2.hust/Data-Science/ds/ml_model_build_random_forest/ml_models/random_forest_model_10.pk1'
 
 #--------------------------- MAKING THE PREDICTIONS ---------------------------
 
