@@ -33,19 +33,19 @@ plt.close('all')
 
 #------------------------------- INPUT VARIABLES ------------------------------
 
-df_5_saved_name = '2019_2020_2021_prem_df_for_ml_5_v2.txt'
-df_10_saved_name = '2019_2020_2021_prem_df_for_ml_10_v2.txt'
+df_5_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_prem_df_for_ml_5_v2.txt'
+df_10_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_prem_df_for_ml_10_v2.txt'
 
-pred_prob_plot_df10 = False
-save_pred_prob_plot_df10 = False
-pred_prob_plot_df5 = False
-save_pred_prob_plot_df5 = False
+pred_prob_plot_df10 = True
+save_pred_prob_plot_df10 = True
+pred_prob_plot_df5 = True
+save_pred_prob_plot_df5 = True
 
-save_conf_matrix_df10 = False
-save_conf_matrix_df5 = False
+save_conf_matrix_df10 = True
+save_conf_matrix_df5 = True
 
-save_learning_curve_df10 = False
-save_learning_curve_df5 = False
+save_learning_curve_df10 = True
+save_learning_curve_df5 = True
 
 create_final_model = True
 
@@ -218,7 +218,7 @@ plot_cross_val_confusion_matrix(ml_10_svm,
                                 title='Support Vector Machine Confusion Matrix ML10', 
                                 cv=skf)
 if save_conf_matrix_df10:
-    plt.savefig('figures\ml_10_confusion_matrix_cross_val_svm.png')
+    plt.savefig('figures/ml_10_confusion_matrix_cross_val_svm.png')
 
 plot_cross_val_confusion_matrix(ml_5_svm, 
                                 x_5, 
@@ -227,7 +227,7 @@ plot_cross_val_confusion_matrix(ml_5_svm,
                                 title='Support Vector Machine Confusion Matrix ML5', 
                                 cv=skf)
 if save_conf_matrix_df5:
-    plt.savefig('figures\ml_5_confusion_matrix_cross_val_svm.png')
+    plt.savefig('figures/ml_5_confusion_matrix_cross_val_svm.png')
 
 
 # ---------- LEARNING CURVE PLOTS ----------
@@ -236,21 +236,21 @@ plot_learning_curve(ml_10_svm,
                     x_10, 
                     y_10, 
                     training_set_size=10, 
-                    x_max=600, 
+                    x_max=2500, 
                     title='Learning Curve - Support Vector Machine DF_10', 
                     leg_loc=1)
 if save_learning_curve_df10:
-    plt.savefig('figures\ml_10_svm_learning_curve.png')
+    plt.savefig('figures/ml_10_svm_learning_curve.png')
 
 plot_learning_curve(ml_5_svm, 
                     x_5, 
                     y_5, 
                     training_set_size=10, 
-                    x_max=600, 
+                    x_max=2500, 
                     title='Learning Curve - Support Vector Machine DF_5', 
                     leg_loc=1)
 if save_learning_curve_df5:
-    plt.savefig('figures\ml_5_svm_learning_curve.png')
+    plt.savefig('figures/ml_5_svm_learning_curve.png')
 
 
 #--------------------------------- FINAL MODEL --------------------------------
