@@ -33,7 +33,7 @@ YEAR_str = str(YEAR)
 
 request_league_ids = False
 request_fixtures = True
-request_missing_game_stats = False
+request_missing_game_stats = True
 
 
 #------------------------------ REQUEST FUNCTIONS -----------------------------
@@ -219,21 +219,29 @@ for i in fixtures_clean.index:
 
 
 def req_prem_stats_list(missing_data):
+    print('Number of')
     if len(missing_data) > 100:
-        print('This request exceeds 100 request limit and has not been completed')
+        print('This request exceeds 100 request limit and just can get first 100 data. Please run the function again to get the rest of the data.')
     else:
+        count = 0
         if len(missing_data) > 0:
-            print('Data collected for the following fixtures:')
+            print('Data collected for the following fixtures id:')
         for i, dat in enumerate(missing_data):
+            if count == 100:
+                print('100 fixtures collected, stopping to avoid API limit')
+                break
             pause_points = [(i*10)-1 for i in range(10)]
             if i in pause_points:
                 print('sleeping for 1 minute - API only allows 10 requests per minute')
                 time.sleep(60)
-            print(dat)
+            print(count," : ", dat)
             fix_id = str(dat)
             fixture_raw = get_api_data(base_url, '/statistics/fixture/' + fix_id + '/')
             fixture_sliced = slice_api(fixture_raw, 34, 2)
             save_api_output('/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_game_stats_json_files/' + fix_id, fixture_sliced)
+            count += 1
+        print('Data collection complete')
+
 
 if request_missing_game_stats:
     req_prem_stats_list(missing_data)

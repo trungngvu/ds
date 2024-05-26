@@ -82,10 +82,10 @@ def req_prem_fixtures_id(season_code, year=YEAR_str):
     premier_league_fixtures_sliced = slice_api(premier_league_fixtures_raw, 33, 2)
 
     #saving the clean data as a json file
-    save_api_output(f'{year}_premier_league_fixtures', premier_league_fixtures_sliced, json_data_path = '/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/')
+    save_api_output(f'{year}_premier_league_fixtures', premier_league_fixtures_sliced, json_data_path = '/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/')
 
     #loading the json file as a DataFrame
-    premier_league_fixtures_df = read_json_as_pd_df(f'{year}_premier_league_fixtures.json', json_data_path='/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/')
+    premier_league_fixtures_df = read_json_as_pd_df(f'{year}_premier_league_fixtures.json', json_data_path='/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/')
     return premier_league_fixtures_df
 
 
@@ -112,7 +112,7 @@ if request_fixtures:
 
 
 def load_prem_fixtures_id(year=YEAR_str):
-    premier_league_fixtures_df = read_json_as_pd_df(f'{year}_premier_league_fixtures.json', json_data_path='/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/')
+    premier_league_fixtures_df = read_json_as_pd_df(f'{year}_premier_league_fixtures.json', json_data_path='/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/')
     return premier_league_fixtures_df
 
 fixtures = load_prem_fixtures_id()
@@ -120,7 +120,7 @@ fixtures = load_prem_fixtures_id()
 
 #------------------------- MAKING CLEAN FIXTURE LIST --------------------------
 
-fixtures = pd.read_json(f'/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/{YEAR_str}_premier_league_fixtures.json', orient='records')
+fixtures = pd.read_json(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{YEAR_str}_premier_league_fixtures.json', orient='records')
 
 #creating clean past fixture list DataFrame
 
@@ -157,27 +157,27 @@ for i in fixtures.index:
 
 fixtures_clean = pd.DataFrame({'Fixture ID': fixtures['fixture_id'], 'Game Date': fixtures['Game Date'], 'Home Team ID': fixtures['HomeTeamID'], 'Away Team ID': fixtures['AwayTeamID'], 'Home Team Goals': fixtures['goalsHomeTeam'], 'Away Team Goals': fixtures['goalsAwayTeam'], 'Venue': fixtures['venue'], 'Home Team': fixtures['Home Team'], 'Away Team': fixtures['Away Team'], 'Home Team Logo': fixtures['Home Team Logo'], 'Away Team Logo': fixtures['Away Team Logo']})
 
-fixtures_clean.to_csv(f'/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/{YEAR_str}_premier_league_fixtures_df.csv', index=False)
+fixtures_clean.to_csv(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{YEAR_str}_premier_league_fixtures_df.csv', index=False)
 
 
 #------------------------- STITCHINING CLEAN FIXTURE LIST --------------------------
 
 #in this section we simply load the 2019 fixtures and the 2020 fixtures and stitch the two dataframes together.
 
-fixtures_clean_2019_2020_2021_2022 = pd.read_csv('/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/2019_2020_2021_2022_premier_league_fixtures_df.csv')
+fixtures_clean_2019_2020_2021_2022 = pd.read_csv('/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/2019_2020_2021_2022_premier_league_fixtures_df.csv')
 
-fixtures_clean_2023 = pd.read_csv('/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/2023_premier_league_fixtures_df.csv')
+fixtures_clean_2023 = pd.read_csv('/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/2023_premier_league_fixtures_df.csv')
 
 fixtures_clean_combined = pd.concat([fixtures_clean_2019_2020_2021_2022, fixtures_clean_2023])
 fixtures_clean_combined = fixtures_clean_combined.reset_index(drop=True)
 
-fixtures_clean_combined.to_csv('/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/2019_2020_2021_2022_2023_premier_league_fixtures_df.csv', index=False)
+fixtures_clean_combined.to_csv('/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/2019_2020_2021_2022_2023_premier_league_fixtures_df.csv', index=False)
 
 
 
 #-------------------------- REQUESTING SPECIFIC STATS -------------------------
 
-fixtures_clean = pd.read_csv(f'/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/{YEAR_str}_premier_league_fixtures_df.csv')
+fixtures_clean = pd.read_csv(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{YEAR_str}_premier_league_fixtures_df.csv')
 
 def req_prem_stats(start_index, end_index):
     for i in fixtures_clean.index[start_index:end_index]:
@@ -198,7 +198,7 @@ def req_prem_stats(start_index, end_index):
 
 
 #listing the json data already collected
-existing_data_raw = listdir('/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_game_stats_json_files/')
+existing_data_raw = listdir('/home/chiennd1702/ds/prem_game_stats_json_files/')
 
 #removing '.json' from the end of this list
 existing_data = []
@@ -220,21 +220,28 @@ for i in fixtures_clean.index:
 
 
 def req_prem_stats_list(missing_data):
+    print('Number of')
     if len(missing_data) > 100:
-        print('This request exceeds 100 request limit and has not been completed')
+        print('This request exceeds 100 request limit and just can get first 100 data. Please run the function again to get the rest of the data.')
     else:
+        count = 0
         if len(missing_data) > 0:
-            print('Data collected for the following fixtures:')
+            print('Data collected for the following fixtures id:')
         for i, dat in enumerate(missing_data):
+            if count == 100:
+                print('100 fixtures collected, stopping to avoid API limit')
+                break
             pause_points = [(i*10)-1 for i in range(10)]
             if i in pause_points:
                 print('sleeping for 1 minute - API only allows 10 requests per minute')
                 time.sleep(60)
-            print(dat)
+            print(count," : ", dat)
             fix_id = str(dat)
             fixture_raw = get_api_data(base_url, '/statistics/fixture/' + fix_id + '/')
             fixture_sliced = slice_api(fixture_raw, 34, 2)
-            save_api_output('/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_game_stats_json_files/' + fix_id, fixture_sliced)
+            save_api_output('/home/chiennd1702/ds/prem_game_stats_json_files/' + fix_id, fixture_sliced)
+            count += 1
+        print('Data collection complete')
 
 if request_missing_game_stats:
     req_prem_stats_list(missing_data)
@@ -498,12 +505,12 @@ stats_dict_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_prem_all_s
 
 df_10_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_prem_df_for_ml_10_v2.txt'
 
-path_to_model = '/home/chienduynguyen1702/2.hust/Data-Science/ds/ml_model_build_random_forest/ml_models/random_forest_model_10.pk1'
+path_to_model = '/home/chiennd1702/ds/ml_model_build_random_forest/ml_models/random_forest_model_10.pk1'
 
 
 #----------------------------- FEATURE ENGINEERING ----------------------------
 
-with open(f'/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/{stats_dict_saved_name}', 'rb') as myFile:
+with open(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{stats_dict_saved_name}', 'rb') as myFile:
     game_stats = pickle.load(myFile)
 
 #creating a list with the team id in
@@ -533,7 +540,7 @@ df_10_upcom_fix_e = average_stats_df(10, team_list, team_fixture_id_dict_reduced
 df_10_upcom_fix = mod_df(df_10_upcom_fix_e, making_predictions=True)
 
 #loading fixtures dataframe, we will work with the clean version but it is good to be aware of what is available in the raw version.
-fixtures_clean = pd.read_csv(f'/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/{fixtures_saved_name}')
+fixtures_clean = pd.read_csv(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{fixtures_saved_name}')
 
 #creating a df with unplayed games only
 played_games = []
@@ -546,7 +553,7 @@ unplayed_games = unplayed_games.reset_index(drop=True)
 unplayed_games = unplayed_games.drop(['Home Team Goals', 'Away Team Goals'], axis=1)
 
 #loading df for the labels
-with open(f'/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/{df_10_saved_name}', 'rb') as myFile:
+with open(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{df_10_saved_name}', 'rb') as myFile:
     df_ml_10 = pickle.load(myFile)
 
 column_list = df_ml_10.columns.tolist()
@@ -627,7 +634,7 @@ for i in range(0, len(unplayed_games)):
     df_for_predictions.iloc[i, 0:7] = h5
     df_for_predictions.iloc[i, 7:14] = a5
 
-path_to_model = '/home/chienduynguyen1702/2.hust/Data-Science/ds/ml_model_build_random_forest/ml_models/random_forest_model_10.pk1'
+path_to_model = '/home/chiennd1702/ds/ml_model_build_random_forest/ml_models/random_forest_model_10.pk1'
 
 #--------------------------- MAKING THE PREDICTIONS ---------------------------
 
@@ -648,9 +655,9 @@ re_order_cols = ['Home Team', 'Away Team', 'Home Win', 'Draw', 'Away Win', 'Game
 
 predictions = predictions.reindex(columns=re_order_cols)
 
-with open('/home/chienduynguyen1702/2.hust/Data-Science/ds/predictions/pl_predictions.csv', 'wb') as myFile:
+with open('/home/chiennd1702/ds/predictions/pl_predictions.csv', 'wb') as myFile:
     pickle.dump(predictions, myFile)
-with open('/home/chienduynguyen1702/2.hust/Data-Science/ds/web_server/pl_predictions.csv', 'wb') as myFile:
+with open('/home/chiennd1702/ds/web_server/pl_predictions.csv', 'wb') as myFile:
     pickle.dump(predictions, myFile)
 
 
@@ -668,7 +675,7 @@ stats_dict_output_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_prem_all_
 
 #in this section we will create a nested dictionary containing the 20 teams, each with a value as another dictionary. In this dictionary we will have the game id along with the game dataframe.
 
-fixtures_clean = pd.read_csv(f'/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/{fixtures_saved_name}')
+fixtures_clean = pd.read_csv(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{fixtures_saved_name}')
 
 #creating the 'fixtures_clean' ID index which we will use to take data from this dataframe and add to each of our individual fixture stats dataframe.
 fixtures_clean_ID_index = pd.Index(fixtures_clean['Fixture ID'])
@@ -699,7 +706,7 @@ for team in team_id_list:
     all_stats_dict[team] = {}
     for j in team_fixture_list:
         #loading df
-        df = pd.read_json('/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_game_stats_json_files/' + str(j) + '.json', orient='values')
+        df = pd.read_json('/home/chiennd1702/ds/prem_game_stats_json_files/' + str(j) + '.json', orient='values')
         clean_possession_and_passes(df)
 
         #adding home vs away goals to df
@@ -735,7 +742,7 @@ for team in team_id_list:
                 team_fixture_list.append(fixtures_clean['Fixture ID'].iloc[i])
     for j in team_fixture_list:
         #loading df
-        df = pd.read_json('/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_game_stats_json_files/' + str(j) + '.json', orient='values')
+        df = pd.read_json('/home/chiennd1702/ds/prem_game_stats_json_files/' + str(j) + '.json', orient='values')
         clean_possession_and_passes(df)
 
         #adding home vs away goals to df
@@ -766,7 +773,7 @@ for team in team_id_list:
 
 #saving our generated dictionary as a pickle file to import into a later python file.
 
-with open(f'/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/{stats_dict_output_name}', 'wb') as myFile:
+with open(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{stats_dict_output_name}', 'wb') as myFile:
     pickle.dump(all_stats_dict, myFile)
 
 
@@ -782,10 +789,10 @@ results_dict_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_addition
 
 #---------- LOADING DATA ----------
 
-with open(f'/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/{stats_dict_saved_name}', 'rb') as myFile:
+with open(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{stats_dict_saved_name}', 'rb') as myFile:
     game_stats = pickle.load(myFile)
 
-fixtures_clean = pd.read_csv(f'/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/{fixtures_saved_name}')
+fixtures_clean = pd.read_csv(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{fixtures_saved_name}')
 
 
 #---------- STATS DICT MANIPULATION ----------
@@ -927,7 +934,7 @@ for team in teams:
     results_dict[team] = df
 
 
-with open(f'/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_and_dataframes/{results_dict_saved_name}', 'wb') as myFile:
+with open(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{results_dict_saved_name}', 'wb') as myFile:
     pickle.dump(results_dict, myFile)
 
 
@@ -936,7 +943,7 @@ with open(f'/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_clean_fixtures_
 #https://www.pythonanywhere.com/forums/topic/27634/
 
 username = 'chiennd1702'
-token = (open('/home/chienduynguyen1702/2.hust/Data-Science/ds/api_key_python_anywhere.txt', mode='r')).read()
+token = (open('/home/chiennd1702/ds/api_key_python_anywhere.txt', mode='r')).read()
 domain_name = "chiennd1702.pythonanywhere.com"
 
 response = requests.post(
