@@ -225,7 +225,7 @@ def req_prem_stats_list(missing_data):
     else:
         count = 0
         if len(missing_data) > 0:
-            print('Data collected for the following fixtures:')
+            print('Data collected for the following fixtures id:')
         for i, dat in enumerate(missing_data):
             if count == 100:
                 print('100 fixtures collected, stopping to avoid API limit')
@@ -240,6 +240,7 @@ def req_prem_stats_list(missing_data):
             fixture_sliced = slice_api(fixture_raw, 34, 2)
             save_api_output('/home/chienduynguyen1702/2.hust/Data-Science/ds/prem_game_stats_json_files/' + fix_id, fixture_sliced)
             count += 1
+        print('Data collection complete')
 
 
 if request_missing_game_stats:
