@@ -1,67 +1,21 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jun 28 12:13:02 2020
 
-@author: mhayt
-"""
-
-#-------------------------------- API-FOOTBALL --------------------------------
 
 
 import numpy as np
 import pandas as pd
 
 
-#------------------------------- DATA PROCESSING ------------------------------
+
 
 
 
 def running_mean(x, N):
-    '''
-    calculates sliding average of interval N, over list x,
-
-    Parameters
-    ----------
-    x : list
-        list of int or floats
-    N : int
-        sliding average interval
-
-    Returns
-    -------
-    list
-        sliding average list
-
-    '''
     cumsum = np.cumsum(np.insert(x, 0, 0)) 
     return (cumsum[N:] - cumsum[:-N]) / float(N)
 
 
 
 def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, making_predictions=False):
-    '''
-    Output is a dataframe of averaged game stats. Included is a teams average stats over 'games_slide' number of games as well as the avergae opponent stats in those games.
-
-    Parameters
-    ----------
-    games_slide : int
-        Number of games to average over.
-    team_list : list
-        list of teams ID's. For premier league there should be 20
-    team_fixture_id_dict : dict
-        key: team ID, value: list of fixture ID
-    game_stats : nested dict
-        key: team id, second-key: fixtue ID, value: stats dataframe 
-    making_predictions: bool
-        default = False. Set to true if creating a prediction dataframe
-
-    Returns
-    -------
-    df_ready_for_ml : dataframe
-        averaged game stats
-
-    '''
-    
     if making_predictions:
         x = games_slide
         xx = 1
@@ -70,7 +24,7 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
         xx = 0
 
   
-    #creating final features which will be appended
+    
     t_total_shots = []
     t_shots_inside_box = []     
     t_fouls = []
@@ -92,13 +46,13 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
     o_team_ID = []
     
     for team_id in team_list[:]:
-        team = game_stats[team_id] #team dictionary
+        team = game_stats[team_id] 
         
-        #skipping over teams which have less games played that the 'games_slide'
+        
         if len(team_fixture_id_dict[team_id]) < games_slide:
             continue
         
-        #creating the initial features - it is important these get overwritten with each iteration
+        
         team_total_shots = []
         team_shots_inside_box = []     
         team_fouls = []
@@ -116,14 +70,14 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
         result_indicator_raw = []
         
         
-        #iterating over the fixture id to create feature lists
+        
         for game_id in team_fixture_id_dict[team_id]:
-            game = team[game_id] #game df
+            game = team[game_id] 
             temp_index = pd.Index(game['Team Identifier'])
             team_ind = temp_index.get_loc(1)
             opponent_ind = temp_index.get_loc(2)
             
-            #team and opponent pseudo features: list of raw feature data for each game
+            
             team_total_shots.append(game['Total Shots'][team_ind])
             team_shots_inside_box.append(game['Shots insidebox'][team_ind])
             team_fouls.append(game['Fouls'][team_ind])
@@ -141,7 +95,7 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
             result_indicator_raw.append(game['Points'][team_ind])
              
         
-        #sliding average of the raw feature lists above to create the final features
+        
         team_total_shots_slide = running_mean(team_total_shots, games_slide)[:x]
         team_shots_inside_box_slide = running_mean(team_shots_inside_box, games_slide)[:x]
         team_fouls_slide = running_mean(team_fouls, games_slide)[:x]
@@ -162,7 +116,7 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
         result_indicator_slide = result_indicator_raw[games_slide-xx:]
 
     
-        #appending over the iterables, the above variables will be overwritten with each iteration
+        
         t_total_shots.extend(team_total_shots_slide)
         t_shots_inside_box.extend(team_shots_inside_box_slide)
         t_fouls.extend(team_fouls_slide)
@@ -184,7 +138,7 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
         o_team_ID.append(team_id)
 
     
-    #piecing together the results into a dataframe   
+    
     df_ready_for_ml = pd.DataFrame({})  
     df_ready_for_ml['Team Av Shots'] = t_total_shots
     df_ready_for_ml['Team Av Shots Inside Box'] = t_shots_inside_box
@@ -208,34 +162,16 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
     if making_predictions:
         df_ready_for_ml['team_id'] = o_team_ID 
     
-    #returning the dataframe
+    
     return df_ready_for_ml
 
 
 
 def mod_df(df, making_predictions=False):
-    '''
-    This function requires the output from the function 'average_stats_df()'. It takes a team and their oppoents (in the last 10 games) average stats, and subtracts one from the other. The benefit of this is it provides a more useful metric for how well a team has been performing. If the 'Av Shots Diff' is positive, it means that team has, on average taken more shots than their opponent in the previous games. This is a useful feature for machine learning.  
-
-    Parameters
-    ----------
-    df : dataframe
-        game stats, outputted from the funtion: 'average_stats_df()'.
-    making_predictions : bool, optional, the default is False.
-        default is set to false, the output is appropriate for training a model. If set to true, the output is suitable for making predictions.
-        
-
-    Returns
-    -------
-    df_output : dataframe
-        modified averaged game stats
-
-    '''
-    
     df_sort = df.sort_values('Target Fixture ID')
     df_sort = df_sort.reset_index(drop=True)
     
-    #in our input dataframe (df) we have removed data from teams that have played less than 5 or 10 games. However, we havent removed data from the oposing team which has played more than 5 or 10 games. In the input df we have two rows for each fixture, one for each teams stats. The code below removes the data of all games that only have a single teams stats available, as this is not useful for training the model. This was not done at an earlier stage because this data is still useful in making future predictions.
+    
     
     if not making_predictions:
     
@@ -263,7 +199,7 @@ def mod_df(df, making_predictions=False):
         df_sort = df_sort.drop(df_sort.index[index_to_remove])    
     
     
-    #creating our desired features
+    
     df_output = pd.DataFrame({})
     
     df_output['Av Shots Diff'] = df_sort['Team Av Shots'] - df_sort['Opponent Av Shots']
@@ -283,23 +219,7 @@ def mod_df(df, making_predictions=False):
 
 
 
-def combining_fixture_id(df):
-    '''
-    This function requires the output from the function 'mod_df()'. Currently this df contains the features for a single team with a target fixture. This function combines the home and away team features into a single row per target fixture. This df is then complete with features for home and away teams and is therefore ready for model training.
-
-    Parameters
-    ----------
-    df : dataframe
-        game stats, outputted from the funtion: 'mod_df()'.
-
-    Returns
-    -------
-    df_output : dataframe
-        features for both home and away team with target fixture id. 
-
-    '''   
-    
-    #iterating over each opponent row to add to the previous
+def combining_fixture_id(df): 
     odd_list = []
     for x in range(1, len(df), 2):
         odd_list.append(x)
@@ -336,23 +256,6 @@ def combining_fixture_id(df):
 
 
 def creating_ml_df(df, making_predictions=False):
-    '''
-    This function requires the output from the function 'average_stats_df()'. It will process the average stats combining the two functions: mod_df() and combining_fixture_id() to create a df ready for model training.
-
-    Parameters
-    ----------
-    df : dataframe
-        game stats, outputted from the funtion: 'average_stats_df()'.
-    making_predictions : bool, optional, the default is False.
-        default is set to false, the output is appropriate for training a model. If set to true, the output is suitable for making predictions.
-
-    Returns
-    -------
-    df_output : dataframe
-        features for both home and away team with target fixture id. 
-
-    '''
-    
     modified_df = mod_df(df)
     df_output = combining_fixture_id(modified_df)
     return df_output

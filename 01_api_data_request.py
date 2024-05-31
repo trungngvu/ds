@@ -1,14 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 13 20:33:10 2020
-
-@author: mhayt
-"""
-
-
 print('\n\n ---------------- START ---------------- \n')
 
-#-------------------------------- API-FOOTBALL --------------------------------
+
 
 import time
 start=time.time()
@@ -18,12 +10,12 @@ import pandas as pd
 import math
 from os import listdir
 
-#Note from the API./ 'in this documentation all the examples are realized with the url provided for rapidApi, if you have subscribed directly with us you will have to replace https://api-football-v1.p.rapidapi.com/v2/ by https://v2.api-football.com/'
 
 
-#------------------------------- INPUT VARIABLES ------------------------------
 
-#Please state the year of investigation. 
+
+
+
 
 YEAR = 2023
 YEAR_str = str(YEAR)
@@ -33,7 +25,7 @@ request_fixtures = True
 request_missing_game_stats = True
 
 
-#------------------------------ REQUEST FUNCTIONS -----------------------------
+
 
 api_key ='66e6132dc27bfd2d090b8e9e8b3951b3'
 
@@ -66,27 +58,27 @@ def read_json_as_pd_df(json_data, json_data_path='', orient_def='records'):
     return output
   
     
-#---------------------------- REQUESTING BASIC DATA ---------------------------
+
 
 base_url = 'https://v2.api-football.com/'
 
 
 def req_prem_fixtures_id(season_code, year=YEAR_str):
-    #request to the api for the data
+    
     premier_league_fixtures_raw = get_api_data(base_url, f'/fixtures/league/{season_code}/')
 
-    #cleaning the data in preparation for loading into a dataframe
+    
     premier_league_fixtures_sliced = slice_api(premier_league_fixtures_raw, 33, 2)
 
-    #saving the clean data as a json file
+    
     save_api_output(f'{year}_premier_league_fixtures', premier_league_fixtures_sliced, json_data_path = 'prem_clean_fixtures_and_dataframes/')
 
-    #loading the json file as a DataFrame
+    
     premier_league_fixtures_df = read_json_as_pd_df(f'{year}_premier_league_fixtures.json', json_data_path='prem_clean_fixtures_and_dataframes/')
     return premier_league_fixtures_df
 
 
-#requesting data on the premier leagues, we will use this response to get the league_id of the season we were interested in
+
 if request_league_ids:
     leagues = premier_league_fixtures_raw = get_api_data(base_url, 'leagues/country/England/2023')
 
@@ -103,7 +95,7 @@ elif YEAR == 2023:
 else:
     print('please lookup season id and specify this as season_id variable')
 
-#requesting the fixture list using the function req_prem_fixture_id
+
 if request_fixtures:
     fixtures = req_prem_fixtures_id(season_id, YEAR_str)
     
@@ -116,11 +108,11 @@ def load_prem_fixtures_id(year=YEAR_str):
 fixtures = load_prem_fixtures_id()
 
 
-#------------------------- MAKING CLEAN FIXTURE LIST --------------------------
+
 
 fixtures = pd.read_json(f'prem_clean_fixtures_and_dataframes/{YEAR_str}_premier_league_fixtures.json', orient='records')
 
-#creating clean past fixture list DataFrame       
+
 
 for i in fixtures.index:
     x1 = str(fixtures['homeTeam'].iloc[i])[12:14]
@@ -157,9 +149,9 @@ fixtures_clean = pd.DataFrame({'Fixture ID': fixtures['fixture_id'], 'Game Date'
 fixtures_clean.to_csv(f'prem_clean_fixtures_and_dataframes/{YEAR_str}_premier_league_fixtures_df.csv', index=False)
 
 
-#------------------------- STITCHINING CLEAN FIXTURE LIST --------------------------
 
-#in this section we simply load the 2019+2020+2021+2022 fixtures and the 2023 fixtures and stitch the two dataframes together. 
+
+
 
 fixtures_clean_2019_2020_2021_2022 = pd.read_csv('prem_clean_fixtures_and_dataframes/2019_2020_2021_2022_premier_league_fixtures_df.csv')
 
@@ -171,7 +163,7 @@ fixtures_clean_combined = fixtures_clean_combined.reset_index(drop=True)
 fixtures_clean_combined.to_csv('prem_clean_fixtures_and_dataframes/2019_2020_2021_2022_2023_premier_league_fixtures_df.csv', index=False)
 
 
-#-------------------------- REQUESTING SPECIFIC STATS -------------------------
+
 
 fixtures_clean = pd.read_csv(f'prem_clean_fixtures_and_dataframes/{YEAR_str}_premier_league_fixtures_df.csv')
     
@@ -185,17 +177,17 @@ def req_prem_stats(start_index, end_index):
             save_api_output('prem_game_stats_json_files/' + fix_id, fixture_sliced)
     
 
-#req_prem_stats(288, 300)
+
  
 
-#----- AUTOMATING MISSING DATA COLLECTION -----
 
-#in this section we will search through our exisiting database (prem_game_stats_json_files folder) and request the game data of any missing games that have been played since we last requested data.
 
-#listing the json data already collected
+
+
+
 existing_data_raw = listdir('prem_game_stats_json_files/')
 
-#removing '.json' from the end of this list
+
 existing_data = []
 for i in existing_data_raw:
     if i.endswith('.json'):
@@ -206,7 +198,7 @@ for i in existing_data_raw:
     else:
         print(f"Skipping non-.json entry: {i}")
 
-#creating a list with the missing     
+
 missing_data = []
 for i in fixtures_clean.index:
     fix_id = fixtures_clean['Fixture ID'].iloc[i]
@@ -237,7 +229,7 @@ if request_missing_game_stats:
     req_prem_stats_list(missing_data)
 
 
-# ----------------------------------- END -------------------------------------
+
 
 print('\n', 'Script runtime:', round(((time.time()-start)/60), 2), 'minutes')
 print(' ----------------- END ----------------- \n')

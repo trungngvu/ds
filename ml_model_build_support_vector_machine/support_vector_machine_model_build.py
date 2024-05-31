@@ -1,16 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon May 11 18:28:28 2020
-
-@author: mhayt
-"""
-
-
 print('\n\n ---------------- START ---------------- \n')
 
-#-------------------------------- API-FOOTBALL --------------------------------
 
-#!/usr/bin/python
+
+
 from os.path import dirname, realpath, sep, pardir
 import sys
 sys.path.append(dirname(realpath(__file__)) + sep + pardir + sep)
@@ -31,7 +23,7 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 plt.close('all')
 
 
-#------------------------------- INPUT VARIABLES ------------------------------
+
 
 df_5_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_prem_df_for_ml_5_v2.txt'
 df_10_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_prem_df_for_ml_10_v2.txt'
@@ -50,9 +42,9 @@ save_learning_curve_df5 = True
 create_final_model = True
 
 
-#------------------------------- ML MODEL BUILD -------------------------------
 
-#importing the data and creating the feature dataframe and target series
+
+
 
 with open(f'../prem_clean_fixtures_and_dataframes/{df_5_saved_name}', 'rb') as myFile:
     df_ml_5 = pickle.load(myFile)
@@ -60,7 +52,7 @@ with open(f'../prem_clean_fixtures_and_dataframes/{df_5_saved_name}', 'rb') as m
 with open(f'../prem_clean_fixtures_and_dataframes/{df_10_saved_name}', 'rb') as myFile:
     df_ml_10 = pickle.load(myFile)
 
-#scaling dataframe to make all features to have zero mean and unit vector.
+
 df_ml_10 = scale_df(df_ml_10, list(range(14)), [14,15,16])
 df_ml_5 = scale_df(df_ml_5, list(range(14)), [14,15,16])
 
@@ -71,35 +63,35 @@ x_5 = df_ml_5.drop(['Fixture ID', 'Team Result Indicator', 'Opponent Result Indi
 y_5 = df_ml_5['Team Result Indicator']
 
 
-#--------------------------- SUPPORT VECTOR MACHINE ---------------------------
+
 
 
 def svm_train(df, print_result=True, print_result_label=''):
     
-    #create features matrix
+    
     x = df.drop(['Fixture ID', 'Team Result Indicator', 'Opponent Result Indicator'], axis=1)
     y = df['Team Result Indicator']
     
-    #split into training data and test data
+    
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
     
-    #default gamma value
+    
     gamma = 1 / (14 * sum(x_train.var()))
     C = 1 / gamma
     
-    #instantiate the SVM class
+    
     clf = svm.SVC(kernel='rbf', C=3, probability=True)
     
-    #train the model
+    
     clf.fit(x_train, y_train)
     
     if print_result:
         print(print_result_label)
-        #training data
+        
         train_data_score = round(clf.score(x_train, y_train) * 100, 1)
         print(f'Training data score = {train_data_score}%')
         
-        #test data
+        
         test_data_score = round(clf.score(x_test, y_test) * 100, 1)
         print(f'Test data score = {test_data_score}% \n')
     
@@ -110,7 +102,7 @@ ml_10_svm, x10_train, x10_test, y10_train, y10_test = svm_train(df_ml_10)
 ml_5_svm, x5_train, x5_test, y5_train, y5_test = svm_train(df_ml_5)
 
 
-# ---------- TESTING C PARAM ----------
+
 
 expo_iter = np.square(np.arange(0.1, 10, 0.1))
 
@@ -131,32 +123,32 @@ def testing_c_parms(df, iterable):
     
 training_score_li, test_score_li = testing_c_parms(df_ml_10, expo_iter)
 
-#from the plot below we can see that a c of around 3 is likely to be more optimal than 1
+
 fig, ax = plt.subplots()
 ax.plot(expo_iter, test_score_li)
     
 
-# ---------- ENSEMBLE MODELLING ----------
 
-#In this section we will combine the results of using the same algorithm but with different input data used to train the model. The features are still broadly the same but have been averaged over a different number of games df_ml_10 is 10 games, df_ml_5 is 5 games. 
 
-#reducing fixtures in df_ml_5 to contain only the fixtures within df_ml_10 and training that new dataset
+
+
+
 df_ml_5_dropto10 = df_ml_5.drop(list(range(0,50)))
 ml_5_to10_svm, x5_to10_train, x5_to10_test, y5_to10_train, y5_to10_test = svm_train(df_ml_5_dropto10, print_result=False)
 
-#making predictions using the two df inputs independantly
+
 y_pred_ml10 = ml_10_svm.predict(x10_test)
 y_pred_ml5to10 = ml_5_to10_svm.predict(x10_test)
 
-#making probability predictions on each of the datasets independantly
+
 pred_proba_ml10 = ml_10_svm.predict_proba(x10_test)
 pred_proba_ml5_10 = ml_5_to10_svm.predict_proba(x10_test)
 
-#combining independant probabilities and creating combined class prediction
+
 pred_proba_ml5and10 = (np.array(pred_proba_ml10) + np.array(pred_proba_ml5_10)) / 2.0
 y_pred_ml5and10 = np.argmax(pred_proba_ml5and10, axis=1)
 
-#accuracy score variables
+
 y_pred_ml10_accuracy = round(accuracy_score(y10_test, y_pred_ml10), 3) * 100
 y_pred_ml5to10_accuracy = round(accuracy_score(y10_test, y_pred_ml5to10), 3) * 100
 y_pred_ml5and10_accuracy = round(accuracy_score(y10_test, y_pred_ml5and10), 3) * 100
@@ -170,9 +162,9 @@ print(f'Accuracy of df_5 and df_10 combined = {y_pred_ml5and10_accuracy}%')
 print(confusion_matrix(y10_test, y_pred_ml5and10), '\n\n')
 
 
-#------------------------------- MODEL EVALUATION -----------------------------
 
-#cross validation
+
+
 skf = StratifiedKFold(n_splits=5, shuffle=True)
 
 cv_score_av = round(np.mean(cross_val_score(ml_10_svm, x_10, y_10, cv=skf))*100,1)
@@ -182,7 +174,7 @@ cv_score_av = round(np.mean(cross_val_score(ml_5_svm, x_5, y_5, cv=skf))*100,1)
 print('Cross-Validation Accuracy Score ML5: ', cv_score_av, '%\n')
 
 
-# ---------- PREDICTION PROBABILITY PLOTS ----------
+
 
 if pred_prob_plot_df10:
     fig = pred_proba_plot(ml_10_svm, 
@@ -207,9 +199,9 @@ if pred_prob_plot_df5:
         fig.savefig('figures/ml_5_svm_pred_proba.png')
 
 
-# ---------- CONFUSION MATRIX PLOTS ----------
 
-#plot confusion matrix - modified to take cross-val results.
+
+
 
 plot_cross_val_confusion_matrix(ml_10_svm, 
                                 x_10, 
@@ -230,7 +222,7 @@ if save_conf_matrix_df5:
     plt.savefig('figures/ml_5_confusion_matrix_cross_val_svm.png')
 
 
-# ---------- LEARNING CURVE PLOTS ----------
+
 
 plot_learning_curve(ml_10_svm, 
                     x_10, 
@@ -253,17 +245,17 @@ if save_learning_curve_df5:
     plt.savefig('figures/ml_5_svm_learning_curve.png')
 
 
-#--------------------------------- FINAL MODEL --------------------------------
 
-#in this section we will take the learnings from the hyperparameter testing above and train a final model using 100% of the data. This model may then be used for predictions going forward.
+
+
 
 if create_final_model:
     
-    #intantiating and training the df_5 network
+    
     ml_5_svm = svm.SVC(kernel='rbf', C=3, probability=True)
     ml_5_svm.fit(x_5, y_5)
     
-    #intantiating and training the df_10 network
+    
     ml_10_svm = svm.SVC(kernel='rbf', C=3, probability=True)
     ml_10_svm.fit(x_10, y_10)
     
@@ -274,7 +266,7 @@ if create_final_model:
         pickle.dump(ml_10_svm, myFile)
 
   
-# ----------------------------------- END -------------------------------------
+
 
 print('\n', 'Script runtime:', round(((time.time()-start)/60), 2), 'minutes')
 print(' ----------------- END ----------------- \n')

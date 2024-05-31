@@ -1,16 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep 22 18:08:41 2020
-
-@author: mhayt
-"""
-
-
 print('\n\n ---------------- START ---------------- \n')
 
-#-------------------------------- API-FOOTBALL --------------------------------
 
-#!/usr/bin/python
+
+
 from os.path import dirname, realpath, sep, pardir
 import sys
 sys.path.append(dirname(realpath(__file__)) + sep + pardir + sep)
@@ -28,13 +20,13 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.model_selection import StratifiedKFold, cross_val_score, cross_val_predict
 
 
-#------------------------------- INPUT VARIABLES ------------------------------
-# 2015_2016_2017_2018_2019_2020_2021_2022_2023_premier_league_fixtures_df.csv
+
+
 fixtures_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_premier_league_fixtures_df.csv'
 
 
 
-#---------------------- ALTERNATIVE FEATURE ENGINEERING -----------------------
+
 
 fixtures_clean = pd.read_csv(f'../prem_clean_fixtures_and_dataframes/{fixtures_saved_name}')
 
@@ -57,7 +49,7 @@ x_10 = alt_df.drop(['Fixture ID', 'Team Result Indicator', 'Opponent Result Indi
 y_10 = alt_df['Team Result Indicator']
 
 
-#------------------------------- ML MODEL BUILD -------------------------------
+
 
 x = alt_df
 y = alt_df['Team Result Indicator']
@@ -77,7 +69,7 @@ ml_df_10 = RandomForestClassifier(max_depth=4, max_features=4, n_estimators=120)
 ml_df_10.fit(x_train, y_train)
 
 
-# ---------- CROSS VALIDATION ----------
+
 
 skf = StratifiedKFold(n_splits=5, shuffle=True)
 
@@ -85,15 +77,15 @@ cv_score_av = round(np.mean(cross_val_score(ml_alt_df, x_10, y_10, cv=skf))*100,
 print('Cross-Validation Accuracy Score ML10: ', cv_score_av, '%\n')
 
 
-# ---------- FEATURE IMPORTANCE ----------
+
 
 fi_ml_10 = pd.DataFrame({'feature': list(x_train.columns),
                          'importance': ml_alt_df.feature_importances_}).sort_values('importance', ascending = False)
 
 
-# ---------- CONFUSION MATRIX PLOTS ----------
 
-#modified to take cross-val results.
+
+
 
 plot_cross_val_confusion_matrix(ml_alt_df, 
                                 x_10, 
@@ -107,7 +99,7 @@ predictions_alt_df = ml_alt_df.predict_proba(x_test)
 predictions_df_ml_10 = ml_df_10.predict_proba(x_test)
 
 
-# ----------------------------------- END -------------------------------------
+
 
 print('\n', 'Script runtime:', round(((time.time()-start)/60), 2), 'minutes')
 print(' ----------------- END ----------------- \n')

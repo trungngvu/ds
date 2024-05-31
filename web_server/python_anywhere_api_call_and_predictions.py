@@ -1,19 +1,12 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Aug 31 14:22:55 2020
 
-@author: mhayt
-"""
 
-#-------------------------------- API-FOOTBALL --------------------------------
 
-#The website supporting this project is currently being hosted on pythonanywhere. Currently only a single script may be scheduled and therefore we need to commbine multiple scripts which generate API calls, and re-generate the predictions based on upcoming games. We also need to adhere to the absolute paths requirired by pythonanywhere. This script will result in automatic updates of the predictions website every midnight.
 
 
 print('\n\n')
 print(' ---------------- START ---------------- \n')
 
-#-------------------------------- API-FOOTBALL --------------------------------
+
 
 import requests
 import pandas as pd
@@ -21,12 +14,12 @@ import math
 import time
 from os import listdir
 
-#Note from the API./ 'in this documentation all the examples are realized with the url provided for rapidApi, if you have subscribed directly with us you will have to replace https://api-football-v1.p.rapidapi.com/v2/ by https://v2.api-football.com/'
 
 
-#------------------------------- INPUT VARIABLES ------------------------------
 
-#Please state the year of investigation.
+
+
+
 
 YEAR = 2023
 YEAR_str = str(YEAR)
@@ -36,7 +29,7 @@ request_fixtures = True
 request_missing_game_stats = False
 
 
-#------------------------------ REQUEST FUNCTIONS -----------------------------
+
 
 api_key = (open('../api_key.txt', mode='r')).read()
 
@@ -69,27 +62,27 @@ def read_json_as_pd_df(json_data, json_data_path='', orient_def='records'):
     return output
 
 
-#---------------------------- REQUESTING BASIC DATA ---------------------------
+
 
 base_url = 'https://v2.api-football.com/'
 
 
 def req_prem_fixtures_id(season_code, year=YEAR_str):
-    #request to the api for the data
+    
     premier_league_fixtures_raw = get_api_data(base_url, f'/fixtures/league/{season_code}/')
 
-    #cleaning the data in preparation for loading into a dataframe
+    
     premier_league_fixtures_sliced = slice_api(premier_league_fixtures_raw, 33, 2)
 
-    #saving the clean data as a json file
+    
     save_api_output(f'{year}_premier_league_fixtures', premier_league_fixtures_sliced, json_data_path = '/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/')
 
-    #loading the json file as a DataFrame
+    
     premier_league_fixtures_df = read_json_as_pd_df(f'{year}_premier_league_fixtures.json', json_data_path='/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/')
     return premier_league_fixtures_df
 
 
-#requesting data on the premier leagues, we will use this response to get the league_id of the season we were interested in
+
 if request_league_ids:
     leagues = premier_league_fixtures_raw = get_api_data(base_url, 'leagues/search/premier_league')
 
@@ -106,7 +99,7 @@ elif YEAR == 2023:
 else:
     print('please lookup season id and specify this as season_id variable')
 
-#requesting the fixture list using the function req_prem_fixture_id
+
 if request_fixtures:
     fixtures = req_prem_fixtures_id(season_id, YEAR_str)
 
@@ -118,11 +111,11 @@ def load_prem_fixtures_id(year=YEAR_str):
 fixtures = load_prem_fixtures_id()
 
 
-#------------------------- MAKING CLEAN FIXTURE LIST --------------------------
+
 
 fixtures = pd.read_json(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{YEAR_str}_premier_league_fixtures.json', orient='records')
 
-#creating clean past fixture list DataFrame
+
 
 for i in fixtures.index:
     x1 = str(fixtures['homeTeam'].iloc[i])[12:14]
@@ -160,9 +153,9 @@ fixtures_clean = pd.DataFrame({'Fixture ID': fixtures['fixture_id'], 'Game Date'
 fixtures_clean.to_csv(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{YEAR_str}_premier_league_fixtures_df.csv', index=False)
 
 
-#------------------------- STITCHINING CLEAN FIXTURE LIST --------------------------
 
-#in this section we simply load the 2019 fixtures and the 2020 fixtures and stitch the two dataframes together.
+
+
 
 fixtures_clean_2019_2020_2021_2022 = pd.read_csv('/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/2019_2020_2021_2022_premier_league_fixtures_df.csv')
 
@@ -175,7 +168,7 @@ fixtures_clean_combined.to_csv('/home/chiennd1702/ds/prem_clean_fixtures_and_dat
 
 
 
-#-------------------------- REQUESTING SPECIFIC STATS -------------------------
+
 
 fixtures_clean = pd.read_csv(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{YEAR_str}_premier_league_fixtures_df.csv')
 
@@ -188,29 +181,29 @@ def req_prem_stats(start_index, end_index):
             save_api_output('2019_prem_game_stats/' + fix_id, fixture_sliced)
 
 
-#req_prem_stats(288, 300)
 
 
-#----- AUTOMATING MISSING DATA COLLECTION -----
-
-#in this section we will search through our exisiting database (2019_prem_game_stats folder) 
-#and request the game data of any missing games that have been played since we last requested data.
 
 
-#listing the json data already collected
+
+
+
+
+
+
 existing_data_raw = listdir('/home/chiennd1702/ds/prem_game_stats_json_files/')
 
-#removing '.json' from the end of this list
+
 existing_data = []
 for i in existing_data_raw:
     try:
-        # Attempt to convert the string (excluding the last 5 characters) to an integer
+        
         existing_data.append(int(i[:-5]))
     except ValueError:
-        # If conversion fails, skip the item and print a warning
+        
         print(f"Skipping invalid entry: {i}")
 
-#creating a list with the missing
+
 missing_data = []
 for i in fixtures_clean.index:
     fix_id = fixtures_clean['Fixture ID'].iloc[i]
@@ -249,58 +242,19 @@ if request_missing_game_stats:
 
 
 
-#--------------------------------- PREDICTIONS --------------------------------
+
 
 import pickle
 import numpy as np
 
 
 def running_mean(x, N):
-    '''
-    calculates sliding average of interval N, over list x,
-
-    Parameters
-    ----------
-    x : list
-        list of int or floats
-    N : int
-        sliding average interval
-
-    Returns
-    -------
-    list
-        sliding average list
-
-    '''
     cumsum = np.cumsum(np.insert(x, 0, 0))
     return (cumsum[N:] - cumsum[:-N]) / float(N)
 
 
 
 def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, making_predictions=False):
-    '''
-    Output is a dataframe of averaged game stats. Included is a teams average stats over 'games_slide' number of games as well as the avergae opponent stats in those games.
-
-    Parameters
-    ----------
-    games_slide : int
-        Number of games to average over.
-    team_list : list
-        list of teams ID's. For premier league there should be 20
-    team_fixture_id_dict : dict
-        key: team ID, value: list of fixture ID
-    game_stats : nested dict
-        key: team id, second-key: fixtue ID, value: stats dataframe
-    making_predictions: bool
-        default = False. Set to true if creating a prediction dataframe
-
-    Returns
-    -------
-    df_ready_for_ml : dataframe
-        averaged game stats
-
-    '''
-
     if making_predictions:
         x = games_slide
         xx = 1
@@ -309,7 +263,7 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
         xx = 0
 
 
-    #creating final features which will be appended
+    
     t_total_shots = []
     t_shots_inside_box = []
     t_fouls = []
@@ -331,13 +285,13 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
     o_team_ID = []
 
     for team_id in team_list[:]:
-        team = game_stats[team_id] #team dictionary
+        team = game_stats[team_id] 
 
-        #skipping over teams which have less games played that the 'games_slide'
+        
         if len(team_fixture_id_dict[team_id]) < games_slide:
             continue
 
-        #creating the initial features - it is important these get overwritten with each iteration
+        
         team_total_shots = []
         team_shots_inside_box = []
         team_fouls = []
@@ -355,14 +309,14 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
         result_indicator_raw = []
 
 
-        #iterating over the fixture id to create feature lists
+        
         for game_id in team_fixture_id_dict[team_id]:
-            game = team[game_id] #game df
+            game = team[game_id] 
             temp_index = pd.Index(game['Team Identifier'])
             team_ind = temp_index.get_loc(1)
             opponent_ind = temp_index.get_loc(2)
 
-            #team and opponent pseudo features: list of raw feature data for each game
+            
             team_total_shots.append(game['Total Shots'][team_ind])
             team_shots_inside_box.append(game['Shots insidebox'][team_ind])
             team_fouls.append(game['Fouls'][team_ind])
@@ -380,7 +334,7 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
             result_indicator_raw.append(game['Points'][team_ind])
 
 
-        #sliding average of the raw feature lists above to create the final features
+        
         team_total_shots_slide = running_mean(team_total_shots, games_slide)[:x]
         team_shots_inside_box_slide = running_mean(team_shots_inside_box, games_slide)[:x]
         team_fouls_slide = running_mean(team_fouls, games_slide)[:x]
@@ -401,7 +355,7 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
         result_indicator_slide = result_indicator_raw[games_slide-xx:]
 
 
-        #appending over the iterables, the above variables will be overwritten with each iteration
+        
         t_total_shots.extend(team_total_shots_slide)
         t_shots_inside_box.extend(team_shots_inside_box_slide)
         t_fouls.extend(team_fouls_slide)
@@ -423,7 +377,7 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
         o_team_ID.append(team_id)
 
 
-    #piecing together the results into a dataframe
+    
     df_ready_for_ml = pd.DataFrame({})
     df_ready_for_ml['Team Av Shots'] = t_total_shots
     df_ready_for_ml['Team Av Shots Inside Box'] = t_shots_inside_box
@@ -447,40 +401,18 @@ def average_stats_df(games_slide, team_list, team_fixture_id_dict, game_stats, m
     if making_predictions:
         df_ready_for_ml['team_id'] = o_team_ID
 
-    #returning the dataframe
+    
     return df_ready_for_ml
 
 
 
 def mod_df(df, making_predictions=False):
-    '''
-    This function requires the output from the function 'average_stats_df()'.
-    It takes a team and their oppoents (in the last 10 games) average stats, and subtracts one from the other. 
-    The benefit of this is it provides a more useful metric for how well a team has been performing. 
-    If the 'Av Shots Diff' is positive, it means that team has, on average taken more shots than their opponent in the previous games. 
-    This is a useful feature for machine learning.
-
-    Parameters
-    ----------
-    df : dataframe
-        game stats, outputted from the funtion: 'average_stats_df()'.
-    making_predictions : bool, optional, the default is False.
-        default is set to false, the output is appropriate for training a model. If set to true, the output is suitable for making predictions.
-
-
-    Returns
-    -------
-    df_output : dataframe
-        modified averaged game stats
-
-    '''
-
     df_sort = df.sort_values('Target Fixture ID')
     df_sort = df_sort.reset_index(drop=True)
 
     df_output = pd.DataFrame({})
 
-    #creating our desired features
+    
     df_output['Av Shots Diff'] = df_sort['Team Av Shots'] - df_sort['Opponent Av Shots']
     df_output['Av Shots Inside Box Diff'] = df_sort['Team Av Shots Inside Box'] - df_sort['Opponent Av Shots Inside Box']
     df_output['Av Fouls Diff'] = df_sort['Team Av Fouls'] - df_sort['Opponent Av Fouls']
@@ -497,7 +429,7 @@ def mod_df(df, making_predictions=False):
     return df_output
 
 
-#------------------------------- INPUT VARIABLES ------------------------------
+
 
 fixtures_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_premier_league_fixtures_df.csv'
 
@@ -508,18 +440,18 @@ df_10_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_prem_df_for_ml_
 path_to_model = '/home/chiennd1702/ds/ml_model_build_random_forest/ml_models/random_forest_model_10.pk1'
 
 
-#----------------------------- FEATURE ENGINEERING ----------------------------
+
 
 with open(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{stats_dict_saved_name}', 'rb') as myFile:
     game_stats = pickle.load(myFile)
 
-#creating a list with the team id in
+
 team_list = []
 for key in game_stats.keys():
     team_list.append(key)
 team_list.sort()
 
-#creating a dictionary with the team id as key and fixture id's as values
+
 team_fixture_id_dict = {}
 for team in team_list:
     fix_id_list = []
@@ -529,7 +461,7 @@ for team in team_list:
     sub_dict = {team:fix_id_list}
     team_fixture_id_dict.update(sub_dict)
 
-#creating the same dictionary as above but only with the previous 10 games ready for predictions.
+
 team_fixture_id_dict_reduced = {}
 for team in team_fixture_id_dict:
     team_fixture_list_reduced = team_fixture_id_dict[team][-10:]
@@ -539,10 +471,10 @@ for team in team_fixture_id_dict:
 df_10_upcom_fix_e = average_stats_df(10, team_list, team_fixture_id_dict_reduced, game_stats, making_predictions=True)
 df_10_upcom_fix = mod_df(df_10_upcom_fix_e, making_predictions=True)
 
-#loading fixtures dataframe, we will work with the clean version but it is good to be aware of what is available in the raw version.
+
 fixtures_clean = pd.read_csv(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{fixtures_saved_name}')
 
-#creating a df with unplayed games only
+
 played_games = []
 for i in range(0, len(fixtures_clean)):
     if math.isnan(fixtures_clean['Home Team Goals'].iloc[i]) == False:
@@ -552,17 +484,17 @@ unplayed_games = fixtures_clean.drop(fixtures_clean.index[played_games])
 unplayed_games = unplayed_games.reset_index(drop=True)
 unplayed_games = unplayed_games.drop(['Home Team Goals', 'Away Team Goals'], axis=1)
 
-#loading df for the labels
+
 with open(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{df_10_saved_name}', 'rb') as myFile:
     df_ml_10 = pickle.load(myFile)
 
 column_list = df_ml_10.columns.tolist()
 
-#instatiating the df for predictions with zeros
+
 df_for_predictions = pd.DataFrame(np.zeros((68, 14)))
 df_for_predictions.columns = column_list[:14]
 
-#adding the home and away team id
+
 df_for_predictions = pd.DataFrame(np.zeros((len(unplayed_games), 14)))
 df_for_predictions.columns = column_list[:14]
 df_for_predictions['Home Team ID'] = unplayed_games['Home Team ID']
@@ -572,9 +504,9 @@ df_for_predictions['Away Team'] = unplayed_games['Away Team']
 df_for_predictions['Game Date'] = unplayed_games['Game Date']
 
 
-# ---------- MODELLING MISSING GAME DATA ----------
-#if our newly promoted team has not yet played 10 games we need to fill in this gap in order to make a prediction. 
-#Lets take the 3 relegated teams, avergae these and use that for all newly promoted teams.
+
+
+
 
 relegated_id_1 = 35
 relegated_id_2 = 38
@@ -589,19 +521,19 @@ average_df = average_df.add(rel_3_df, fill_value=0)
 average_df = average_df.div(3)
 
 
-# ---------- POPULATING 'df_for_predictions' WITH STATS ----------
+
 
 for i in range(0, len(unplayed_games)):
-    #getting home team id and index
+    
     home_team = unplayed_games['Home Team ID'].iloc[i]
     home_team_index = df_10_upcom_fix[df_10_upcom_fix['Team ID']==home_team].index.values
 
-    #getting away team id and index
+    
     away_team = unplayed_games['Away Team ID'].iloc[i]
     away_team_index = df_10_upcom_fix[df_10_upcom_fix['Team ID']==away_team].index.values
 
-    #getting the home and away team stats given the index of the teams. This still a df. To replace in the df_for_predictions we need this to be a list. This turns out to be quite complex (steps 2 through to 5).
-    #if the team is newly promoted they will not have any stats in df_10_upcom_fix. If this is the case we need to replace the missing data with modelled data
+    
+    
     team_ids = list(df_10_upcom_fix['Team ID'])
 
     if home_team in team_ids:
@@ -636,7 +568,7 @@ for i in range(0, len(unplayed_games)):
 
 path_to_model = '/home/chiennd1702/ds/ml_model_build_random_forest/ml_models/random_forest_model_10.pk1'
 
-#--------------------------- MAKING THE PREDICTIONS ---------------------------
+
 
 clf = pickle.load(open(f'{path_to_model}', 'rb'))
 
@@ -661,43 +593,43 @@ with open('/home/chiennd1702/ds/web_server/pl_predictions.csv', 'wb') as myFile:
     pickle.dump(predictions, myFile)
 
 
-#------------------------------- ALL STATS DICT ------------------------------
 
-#updating this dictionary is required for the additional stats calculation
 
-#Please state the name of the fixtures DataFrame we want to generate our dictionary, as well as the name of the saved output file (nested stats dictionary).
+
+
+
 
 fixtures_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_premier_league_fixtures_df.csv'
 stats_dict_output_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_prem_all_stats_dict.txt'
 
 
-#---------- CREATING DF PER TEAM ----------
 
-#in this section we will create a nested dictionary containing the 20 teams, each with a value as another dictionary. In this dictionary we will have the game id along with the game dataframe.
+
+
 
 fixtures_clean = pd.read_csv(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{fixtures_saved_name}')
 
-#creating the 'fixtures_clean' ID index which we will use to take data from this dataframe and add to each of our individual fixture stats dataframe.
+
 fixtures_clean_ID_index = pd.Index(fixtures_clean['Fixture ID'])
 
-#team id list that we can iterate over
+
 team_id_list = (fixtures_clean['Home Team ID'].unique()).tolist()
 
-#creating our dictionary which we will populate with data
+
 all_stats_dict = {}
-# Function to clean the 'Ball Possession' and 'Passes %' columns
+
 def clean_possession_and_passes(df):
     if 'Ball Possession' in df.columns and 'Passes %' in df.columns:
-        # Replace '%' and convert to int, handling non-string and NaN values
+        
         df['Ball Possession'] = df['Ball Possession'].fillna('0').astype(str).str.replace('%', '').astype(int)
         df['Passes %'] = df['Passes %'].fillna('0').astype(str).str.replace('%', '').astype(int)
     else:
         print("Columns 'Ball Possession' or 'Passes %' not found in DataFrame")
 
-#nested for loop to create nested dictionary, first key by team id, second key by fixture id.
+
 for team in team_id_list:
 
-    #working the home teams
+    
     team_fixture_list = []
     for i in fixtures_clean.index[:]:
         if fixtures_clean['Home Team ID'].iloc[i] == team:
@@ -705,16 +637,16 @@ for team in team_id_list:
                 team_fixture_list.append(fixtures_clean['Fixture ID'].iloc[i])
     all_stats_dict[team] = {}
     for j in team_fixture_list:
-        #loading df
+        
         df = pd.read_json('/home/chiennd1702/ds/prem_game_stats_json_files/' + str(j) + '.json', orient='values')
         clean_possession_and_passes(df)
 
-        #adding home vs away goals to df
+        
         temp_index = fixtures_clean_ID_index.get_loc(j)
         home_goals = fixtures_clean['Home Team Goals'].iloc[temp_index]
         away_goals = fixtures_clean['Away Team Goals'].iloc[temp_index]
         df['Goals'] = [home_goals, away_goals]
-        #adding points data
+        
         if home_goals > away_goals:
             df['Points'] = [2,0]
         elif home_goals == away_goals:
@@ -723,34 +655,34 @@ for team in team_id_list:
             df['Points'] = [0,2]
         else:
             df['Points'] = ['nan', 'nan']
-        #adding home-away identifier to df
+        
         df['Team Identifier'] = [1,2]
-        #adding team id
+        
         df['Team ID'] = [team, fixtures_clean['Away Team ID'].iloc[temp_index]]
-        #adding game date
+        
         gd = fixtures_clean['Game Date'].iloc[temp_index]
         df['Game Date'] = [gd, gd]
-        #adding this modified df to nested dictionary
+        
         sub_dict_1 = {j:df}
         all_stats_dict[team].update(sub_dict_1)
 
-    #working the away teams
+    
     team_fixture_list = []
     for i in fixtures_clean.index[:]:
         if fixtures_clean['Away Team ID'].iloc[i] == team:
             if math.isnan(fixtures_clean['Away Team Goals'].iloc[i]) == False:
                 team_fixture_list.append(fixtures_clean['Fixture ID'].iloc[i])
     for j in team_fixture_list:
-        #loading df
+        
         df = pd.read_json('/home/chiennd1702/ds/prem_game_stats_json_files/' + str(j) + '.json', orient='values')
         clean_possession_and_passes(df)
 
-        #adding home vs away goals to df
+        
         temp_index = fixtures_clean_ID_index.get_loc(j)
         home_goals = fixtures_clean['Home Team Goals'].iloc[temp_index]
         away_goals = fixtures_clean['Away Team Goals'].iloc[temp_index]
         df['Goals'] = [home_goals, away_goals]
-        #adding points data
+        
         if home_goals > away_goals:
             df['Points'] = [2,0]
         elif home_goals == away_goals:
@@ -759,43 +691,29 @@ for team in team_id_list:
             df['Points'] = [0,2]
         else:
             df['Points'] = ['nan', 'nan']
-        #adding home-away identifier to df
+        
         df['Team Identifier'] = [2,1]
-        #adding team id
+        
         df['Team ID'] = [fixtures_clean['Home Team ID'].iloc[temp_index], team]
-        #adding game date
+        
         gd = fixtures_clean['Game Date'].iloc[temp_index]
         df['Game Date'] = [gd, gd]
-        #adding this modified df to nested dictionary
+        
         sub_dict_1 = {j:df}
         all_stats_dict[team].update(sub_dict_1)
 
-
-#saving our generated dictionary as a pickle file to import into a later python file.
-
 with open(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{stats_dict_output_name}', 'wb') as myFile:
     pickle.dump(all_stats_dict, myFile)
-
-
-#------------------------------ ADDITIONAL STATS ------------------------------
-
-#in this section we will load our already generated stats dictionary and apply some slight transforms to get a df per team which has the past results and the teams played. This will then be used in the 'more information' dropdown / collapsible on our website
-
 
 stats_dict_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_prem_all_stats_dict.txt'
 fixtures_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_premier_league_fixtures_df.csv'
 results_dict_saved_name = '2015_2016_2017_2018_2019_2020_2021_2022_2023_additional_stats_dict.txt'
 
 
-#---------- LOADING DATA ----------
-
 with open(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{stats_dict_saved_name}', 'rb') as myFile:
     game_stats = pickle.load(myFile)
 
 fixtures_clean = pd.read_csv(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{fixtures_saved_name}')
-
-
-#---------- STATS DICT MANIPULATION ----------
 
 teams_df = fixtures_clean.drop_duplicates(subset=['Home Team'])
 teams_df = teams_df.drop(['Fixture ID', 'Game Date', 'Away Team', 'Away Team ID', 'Home Team Goals', 'Away Team Goals', 'Away Team Logo'], axis=1)
@@ -804,9 +722,6 @@ teams_df = teams_df.reset_index(drop=True)
 teams_df = teams_df.rename(columns={'Home Team ID': 'Team ID', 'Home Team': 'Team', 'Home Team Logo': 'Team Logo'})
 
 def team_data(teams_df, team_id, return_data):
-    '''
-    return_data can be specified as one of the following three variables: 'Venue', 'Team', 'Team Logo'
-    '''
     team = teams_df.loc[teams_df['Team ID'] == team_id]
     item = team[return_data]
     item = item.to_string(index=False)
@@ -814,12 +729,6 @@ def team_data(teams_df, team_id, return_data):
 
 test = team_data(teams_df, 50, 'Team')
 
-
-#---------- DF MANIPULATION ----------
-
-#in this section we will create a df for each team, containing all the basic information on all past games. This can then be used as a display in the web application. This will then be placed into a dictionary, with the key being the team ID.
-
-#instantiating dictionary and team ID's
 results_dict = {}
 teams = teams_df['Team ID']
 
@@ -831,7 +740,7 @@ for team in teams:
     fixture_id = list(dic.keys())
 
     if len(dic) == 0:
-        #nan_df = results_dict[33]
+        
         nan_df = pd.DataFrame({})
         nan_df['Home_Team'] = ['N/A'] * 5
         nan_df['Away_Team'] = ['N/A'] * 5
@@ -938,9 +847,9 @@ with open(f'/home/chiennd1702/ds/prem_clean_fixtures_and_dataframes/{results_dic
     pickle.dump(results_dict, myFile)
 
 
-#----------------------------- REFRESHING WEBPAGE -----------------------------
 
-#https://www.pythonanywhere.com/forums/topic/27634/
+
+
 
 username = 'chiennd1702'
 token = (open('/home/chiennd1702/ds/api_key_python_anywhere.txt', mode='r')).read()
@@ -958,6 +867,6 @@ else:
     print('Got unexpected status code {}: {!r}'.format(response.status_code, response.content))
 
 
-# ----------------------------------- END -------------------------------------
+
 
 print(' ----------------- END ----------------- \n')
